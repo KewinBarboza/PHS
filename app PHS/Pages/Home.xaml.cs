@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace app_PHS
+namespace app_PHS.Pages
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para PageFacturas.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Home : Page
     {
-        public MainWindow()
+        public Home()
         {
             InitializeComponent();
+        }
+
+        private void btnFacturas_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate( new PageFactura());
         }
     }
 }
