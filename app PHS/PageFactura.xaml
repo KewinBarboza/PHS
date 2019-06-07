@@ -1,0 +1,114 @@
+﻿<Page x:Class="app_PHS.PageFactura"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="636" d:DesignWidth="1257"
+      Title="PageFactura">
+
+    <Grid Background="White">
+        <Grid Width="400" HorizontalAlignment="Left" Background="#f1f1f1">
+            <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,0,0,604">
+                <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <TextBlock x:Name="consultarFacturas" HorizontalAlignment="Center" Foreground="Gray" Margin="16,41,308,0" TextWrapping="Wrap" Text="Ventas" VerticalAlignment="Top" FontSize="20" Width="76"/>
+            <ListBox Style="{StaticResource MaterialDesignToolToggleListBox}" SelectedIndex="0" Margin="280,34,20,568">
+                <ListBox.ToolTip>
+                    <StackPanel>
+                        <TextBlock Text="Exportar Factura" />
+                    </StackPanel>
+                </ListBox.ToolTip>
+                <ListBoxItem>
+                    <materialDesign:PackIcon  Kind="FilePdf" />
+                </ListBoxItem>
+                <ListBoxItem x:Name="ExportarExcel" Selector.Selected="ExportarExcel_Selected">
+                    <materialDesign:PackIcon Kind="FileExcel" />
+                </ListBoxItem>
+            </ListBox>
+
+            <StackPanel>
+                <materialDesign:PackIcon Kind="Receipt" Height="25" Width="25" Margin="5 105" Foreground="#f9aa33"/>
+            </StackPanel>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Factura"   Margin="43,87,159,504" FontSize="15" KeyDown="textBuscar_KeyDown"/>
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <StackPanel>
+                <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="5 175" Foreground="#f9aa33"/>
+            </StackPanel>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="txtBuscarCodCliente"  materialDesign:HintAssist.Hint="Codigo Cliente" Margin="43,152,159,437" FontSize="15" KeyDown="txtBuscarCodCliente_KeyDown"/>
+            <Button x:Name="btnBuscarCodCliente" Click="btnBuscarCodCliente_Click" Width="100" Content="Consultar" Margin="280,167,20,437"></Button>
+
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FlowDirection="RightToLeft" BorderBrush="#f9aa33" x:Name="fechaIni" materialDesign:HintAssist.Hint="Fecha inicio"  Margin="11,218,289,374"  Width="100" FontSize="15" Height="44" />
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FlowDirection="RightToLeft" BorderBrush="#f9aa33" x:Name="fechaFin" materialDesign:HintAssist.Hint="Fecha fin"  Margin="141,218,159,374"  Width="100" FontSize="15" Height="44"/>
+            <Button x:Name="btnBuscarFecha" Click="btnBuscarFecha_Click" Content="Consultar"  Margin="280,230,20,374"  Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <!-- long hand form for setting the message -->
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,314" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+
+            <DataGrid x:Name="GridFacturas" HorizontalAlignment="Left" Margin="0,352,0,0" VerticalAlignment="Top" Width="400" Height="284" Background="#f3f3f3" MouseDoubleClick="GridFacturas_MouseDoubleClick" IsReadOnly="True" />
+
+        </Grid>
+        <Grid Margin="400,0,0,0">
+            <Image x:Name="image"  Width="200" Source="C:\Users\kbarboza\Desktop\proyecto\PROYECTO PHS\PHS\app PHS\Assets\LOCKEY.png" Margin="0,0,657,576"/>
+            <TextBlock  TextWrapping="Wrap" x:Name="t1" Text="FACTURA DE EXPORTACIÓN/EXPORT INVOICE"  FontSize="12" Margin="205,0,391,613" />
+            <TextBlock  TextWrapping="Wrap" x:Name="t2" Text="Inversora Lockey, C.A. RIF: J-00119849-0"  FontSize="12" Margin="205,14,391,599" />
+            <TextBlock  TextWrapping="Wrap" x:Name="t3" Text="DIRECCIÓN FISCAL: Calle los Pinos, Local Galpón Lockey, Sector Los Mangos, Los Teques, Los Teques-Miranda, Zona Postal 1201"  FontSize="9" Margin="205,33,103,585" />
+            <TextBlock  TextWrapping="Wrap" x:Name="t4" Text="Telf: +58 212 321.07.44/Fax: 0212-321.42.53"  FontSize="9" Margin="205,50,407,567" />
+            <TextBlock  TextWrapping="Wrap" x:Name="t5" Text="Web:inversoralockey.com/E-mail:ventas.exportaciones@lockey.net.ve Apartado postal 40355 Caracas 1040, Los Teques 105"  FontSize="9" Margin="205,66,121,545" />
+            <TextBlock  TextWrapping="Wrap" x:Name="t6" Text="RIF: J-00119849-0"  FontSize="15" Margin="5,56,692,558" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="FACTURA"  FontSize="11" Margin="5,112,785,502" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="00000" x:Name="numFactura"  FontSize="11" Margin="77,112,373,502" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="CLIENTE"  FontSize="11" Margin="5,139,785,475" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="NOMBRE" x:Name="nomCliente" FontSize="11" Margin="77,139,373,475" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="FECHA"  FontSize="11" Margin="5,166,785,448" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="00/00/000" x:Name="fecFactura"  FontSize="11" Margin="77,166,373,448" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="DESPACHO"  FontSize="11" Margin="5,193,785,421" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="00/00/0000"  x:Name="fecDespacho" FontSize="11" Margin="77,193,373,421" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="STATUS"  FontSize="11" Margin="5,220,785,394" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="N/A" x:Name="status" FontSize="11" Margin="77,220,373,394" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="Nº GUIA"  FontSize="11" Margin="505,112,275,502" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="numGUia"  FontSize="11" Margin="594,112,22,502" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="TRANSPORTE"  FontSize="11" Margin="505,139,275,475" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="numTransporte" FontSize="11" Margin="594,139,22,475" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="RECIBE"  FontSize="11" Margin="505,166,275,448" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="00/00/0000" x:Name="fecRecibido"  FontSize="11" Margin="594,166,22,448" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="FLETE"  FontSize="11" Margin="505,193,275,421" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="monFlete" FontSize="11" Margin="594,193,22,421" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="% FLETE"  FontSize="11" Margin="505,220,275,394" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="porFlete" FontSize="11" Margin="594,220,22,394" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="MONTO"  FontSize="11" Margin="5,280,802,334" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="monto" FontSize="11" Margin="5,302,692,312" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="DESC"  FontSize="11" Margin="174,280,617,334" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="desc"  FontSize="11" Margin="174,302,478,312" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="NETO"  FontSize="11" Margin="401,280,411,334" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="neto"  FontSize="11" Margin="401,302,293,312" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="TOTAL"  FontSize="11" Margin="579,280,231,334" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="total" FontSize="11" Margin="579,302,141,312" RenderTransformOrigin="0.503,-0.196"/>
+
+            <TextBlock  TextWrapping="Wrap" Text="I.V.A"  FontSize="11" Margin="725,280,100,334" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
+            <TextBlock  TextWrapping="Wrap" Text="000000" x:Name="iva"  FontSize="11" Margin="725,302,22,312" RenderTransformOrigin="0.503,-0.196"/>
+
+            <DataGrid x:Name="GridFactura" HorizontalAlignment="Center" Margin="0,351,0,0" VerticalAlignment="Top" Width="857" Height="285" Background="#fefefe"  IsReadOnly="True"/>
+        </Grid>
+    </Grid>
+</Page>

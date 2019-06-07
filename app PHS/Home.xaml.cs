@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace app_PHS.Pages
+namespace app_PHS
 {
     /// <summary>
     /// Lógica de interacción para PageFacturas.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class Home
     {
         public Home()
         {
@@ -27,7 +27,25 @@ namespace app_PHS.Pages
 
         private void btnFacturas_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate( new PageFactura());
+            if (clsGeneral.gTipoUsuario != "A")
+            {
+                mensajes("Acceso denegado");
+            }
+            else
+            {
+                NavigationService.Navigate( new PageFactura());
+            }
+        }
+
+        private void mensajes(string mensaje)
+        {
+            messege.IsActive = true;
+            messege.MessageQueue.Enqueue(mensaje);
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

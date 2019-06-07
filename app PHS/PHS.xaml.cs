@@ -29,12 +29,11 @@ namespace app_PHS
 
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
-            
+            WindowState = WindowState.Minimized;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            
             Application.Current.Shutdown();
         }
 
