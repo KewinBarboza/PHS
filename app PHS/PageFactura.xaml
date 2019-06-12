@@ -64,7 +64,7 @@
             <TextBlock  TextWrapping="Wrap" x:Name="t6" Text="RIF: J-00119849-0"  FontSize="15" Margin="5,56,692,558" RenderTransformOrigin="0.503,-0.196"/>
 
             <TextBlock  TextWrapping="Wrap" Text="FACTURA"  FontSize="11" Margin="5,112,785,502" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
-            <TextBlock  TextWrapping="Wrap" Text="00000" x:Name="numFactura"  FontSize="11" Margin="77,112,373,502" RenderTransformOrigin="0.503,-0.196"/>
+            <TextBlock  TextWrapping="Wrap" Text="651" x:Name="numFactura"  FontSize="11" Margin="77,112,373,502" RenderTransformOrigin="0.503,-0.196"/>
 
             <TextBlock  TextWrapping="Wrap" Text="CLIENTE"  FontSize="11" Margin="5,139,785,475" RenderTransformOrigin="0.503,-0.196" FontWeight="Bold"/>
             <TextBlock  TextWrapping="Wrap" Text="NOMBRE" x:Name="nomCliente" FontSize="11" Margin="77,139,373,475" RenderTransformOrigin="0.503,-0.196"/>

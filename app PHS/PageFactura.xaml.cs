@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using System.Linq;
 using Microsoft.Office.Interop.Excel;
 using System.Windows.Controls;
+using SAPBusinessObjects.WPF.Viewer;
 
 namespace app_PHS
 {
@@ -304,7 +305,10 @@ namespace app_PHS
 
         private void ExportarExcel_Selected(object sender, RoutedEventArgs e)
         {
-            //exportarFacturaExcel();
+            WindowRepFactura p  = new WindowRepFactura();
+            p.reporte();
+            p.Show();
+
         }
     }
 }

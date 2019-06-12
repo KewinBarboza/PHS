@@ -48,7 +48,14 @@ namespace app_PHS
                 }
                 else
                 {
-                    clsGeneral.gTipoUsuario = row["rol"].ToString();
+                    clsGeneral.factura = Convert.ToInt32( row["factura"].ToString() );
+                    clsGeneral.RRHH =Convert.ToInt32( row["RRHH"].ToString() ) ;
+                    clsGeneral.finanza =Convert.ToInt32( row["finanza"].ToString() ) ;
+                    clsGeneral.contabilidad =Convert.ToInt32( row["contabilidad"].ToString() ) ;
+                    clsGeneral.inventario =Convert.ToInt32( row["inventario"].ToString() ) ;
+                    clsGeneral.compras =Convert.ToInt32( row["compras"].ToString() ) ;
+                    clsGeneral.despacho =Convert.ToInt32( row["despacho"].ToString() ) ;
+                    clsGeneral.ing_contabilidad =Convert.ToInt32( row["ing_contabilidad"].ToString() ) ;
                     PHS form = new PHS();
                     this.Hide();
                     form.ShowDialog();

@@ -27,7 +27,7 @@ namespace app_PHS
 
         private void btnFacturas_Click(object sender, RoutedEventArgs e)
         {
-            if (clsGeneral.gTipoUsuario != "A")
+            if (clsGeneral.factura == 1)
             {
                 mensajes("Acceso denegado");
             }
@@ -46,6 +46,46 @@ namespace app_PHS
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void BtnRRHH_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFinanza_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnContabilidad_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnInventario_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCompras_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDespacho_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnIngProyecto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnConfiguracion_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate( new PageConfiguracion() );
         }
     }
 }

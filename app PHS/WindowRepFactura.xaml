@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:app_PHS"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="app_PHS.WindowRepFactura"
+        mc:Ignorable="d"
+        Title="WindowRepFactura" Height="731.694" Width="1091.999" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-8,0">
+
+        <Viewer:CrystalReportsViewer HorizontalAlignment="Left" VerticalAlignment="Top" Width="1082" Height="105" Name="crystalReportViewer1"/>
+
+    </Grid>
+</Window>
