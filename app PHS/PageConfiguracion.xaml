@@ -10,7 +10,7 @@
       Title="PageConfiguracion">
 
     <Grid Background="White">
-        <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,0,0,604">
+        <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="10,10,0,594">
             <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
         </Button>
         <StackPanel Width="400" Margin="707,45,150,64" Background="#FFF7F7F7">

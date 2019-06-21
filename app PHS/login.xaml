@@ -16,17 +16,17 @@
                 <materialDesign:PackIcon Kind="WindowClose" Height="21" Width="20"/>
             </Button>
         </Grid>
-        <Image Source="C:\Users\kbarboza\Desktop\proyecto\PROYECTO PHS\PHS\app PHS\Assets/LOGO.png" x:Name="image"  Height="100"  HorizontalAlignment="Center"  Width="300" Margin="48,36,52,314"/>
+        <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image"  Height="100"  HorizontalAlignment="Center"  Width="300" Margin="48,36,52,314"/>
 
         <StackPanel>
             <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="45 215" Foreground="#f9aa33"/>
         </StackPanel>
-        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="nomUsuario"  materialDesign:HintAssist.Hint="Nombre de usuario"  FontSize="15" Margin="80,200,50,208"/>
+        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="prueba" BorderBrush="#f9aa33" x:Name="nomUsuario"  materialDesign:HintAssist.Hint="Nombre de usuario"  FontSize="15" Margin="80,200,50,208"/>
 
-        <StackPanel>
+        <StackPanel Loaded="StackPanel_Loaded">
             <materialDesign:PackIcon Kind="TextboxPassword" Height="25" Width="25" Margin="45,290,0,270" Foreground="#f9aa33" />
         </StackPanel>
-        <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" BorderBrush="#f9aa33" x:Name="contraseña"  materialDesign:HintAssist.Hint="Contraseña" Margin="80,279,50,130" FontSize="15"/>
+        <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"   BorderBrush="#f9aa33" x:Name="contraseña"  materialDesign:HintAssist.Hint="Contraseña" Margin="80,279,50,130" FontSize="15" KeyDown="contraseña_KeyDown"/>
         <Button Width="300" x:Name="btnInicio" Margin="50,380,50,38" Click="BtnInicio_Click">Iniciar</Button>
 
         <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,260" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">

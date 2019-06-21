@@ -96,7 +96,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NegFactura.cs" />
+    <Compile Include="NegClientes.cs" />
+    <Compile Include="NegFacturas.cs" />
     <Compile Include="NegLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

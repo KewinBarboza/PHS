@@ -8,21 +8,21 @@ using CapaDatos;
 
 namespace CapaNegocios
 {
-    public class NegFactura
+    public class NegFacturas
     {
         public static DataTable consultarFactura(int numFactura)
         {
-            return new clsFactura().consultarFactura( numFactura );
+            return new clsFacturas().consultarFactura( numFactura );
         }
 
         public static DataTable consultarFacturaFecha(string fechaIni, string fechaFin)
         {
-            return new clsFactura().consultarFacturaFecha( fechaIni, fechaFin );
+            return new clsFacturas().consultarFacturaFecha( fechaIni, fechaFin );
         }
 
         public static DataTable consultarFacturaCodigoCliente(int codCliente)
         {
-            return new clsFactura().consultarFacturaCodigoCliente( codCliente );
+            return new clsFacturas().consultarFacturaCodigoCliente( codCliente );
         }
     }
 }

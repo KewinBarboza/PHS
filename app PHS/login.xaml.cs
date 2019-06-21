@@ -42,8 +42,8 @@ namespace app_PHS
                 if (dt.Rows.Count == 0)
                 {
                     mensajes("Usuario o contraseña inválida intente de nuevo");
-                    contraseña.Password = "";
-                    nomUsuario.Text = "";
+                    //contraseña.Password = "";
+                    //nomUsuario.Text = "";
 
                 }
                 else
@@ -64,12 +64,6 @@ namespace app_PHS
 
         }
 
-        public void prueba()
-        {
-            Home p = new Home();
-            p.btnFacturas.IsEnabled = true;
-            MessageBox.Show("sss");
-        }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -93,5 +87,19 @@ namespace app_PHS
             messege.MessageQueue.Enqueue(mensaje);
         }
 
+        private void contraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return)
+            {
+                BtnInicio_Click( null, null );
+            }
+        }
+
+        private void StackPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            contraseña.Focusable=true;
+            contraseña.Focus();
+           
+        }
     }
 }

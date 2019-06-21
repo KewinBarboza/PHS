@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class clsFactura
+    public class clsFacturas
     {
         private Conexion conexion  = new Conexion();
 

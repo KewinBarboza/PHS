@@ -96,7 +96,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsFactura.cs" />
+    <Compile Include="clsClientes.cs" />
+    <Compile Include="clsFacturas.cs" />
     <Compile Include="clsLogin.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

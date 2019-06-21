@@ -6,9 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:app_PHS"
         mc:Ignorable="d"
-        Title="PHS" Height="667" Width="1257" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="PHS" Height="667" Width="1257" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Background="White" MouseDown="Grid_MouseDown">
-        <Frame Height="636" Margin="0,31" x:Name="Frame" Source="/app PHS;component/Home.xaml" NavigationUIVisibility="Hidden"></Frame>
+        <Frame Height="636" x:Name="Frame" Source="/app PHS;component/Home.xaml" NavigationUIVisibility="Hidden" Margin="0,23,0,0"></Frame>
         <StackPanel Grid.ColumnSpan="6" Grid.RowSpan="6">
             <Grid  Background="#D2DBE0" Height="31">
                 <Button x:Name="btnMinimizar" Click="btnMinimizar_Click" Height="21" Width="20" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="1140,0,0,0" >

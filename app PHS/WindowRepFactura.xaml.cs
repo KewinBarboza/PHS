@@ -25,16 +25,22 @@ namespace app_PHS
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            reporte();
+            //reporte();
         }
 
-        public void reporte()
+        public void reporte(int numF)
         {
-            PageFactura num = new PageFactura();
             crystalReportViewer1.Owner=this;
             CrystalReport1 reporte = new CrystalReport1();
-            //crystalReportViewer1 = new CrystalReportViewer();
-            reporte.SetParameterValue( "@numFactura", Convert.ToInt32( num.numFactura.Text ) );
+            reporte.SetParameterValue( "@numFactura", Convert.ToInt32( numF ) );
+            crystalReportViewer1.ViewerCore.ReportSource=reporte;
+        }
+
+        public void reporteClientes(string numRif)
+        {
+            crystalReportViewer1.Owner=this;
+            ReportClientes reporte = new ReportClientes();
+            reporte.SetParameterValue( "@numRif",  numRif  );
             crystalReportViewer1.ViewerCore.ReportSource=reporte;
         }
 

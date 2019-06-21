@@ -25,22 +25,22 @@ namespace app_PHS
             InitializeComponent();
         }
 
-        private void btnFacturas_Click(object sender, RoutedEventArgs e)
-        {
-            if (clsGeneral.factura == 1)
-            {
-                mensajes("Acceso denegado");
-            }
-            else
-            {
-                NavigationService.Navigate( new PageFactura());
-            }
-        }
-
         private void mensajes(string mensaje)
         {
             messege.IsActive = true;
             messege.MessageQueue.Enqueue(mensaje);
+        }
+
+        private void btnVentas_Click(object sender, RoutedEventArgs e)
+        {
+            if (clsGeneral.factura==1)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -87,5 +87,7 @@ namespace app_PHS
         {
             NavigationService.Navigate( new PageConfiguracion() );
         }
+
+       
     }
 }

@@ -9,7 +9,16 @@
         Title="WindowRepFactura" Height="731.694" Width="1091.999" Loaded="Window_Loaded">
     <Grid Margin="0,0,-8,0">
 
-        <Viewer:CrystalReportsViewer HorizontalAlignment="Left" VerticalAlignment="Top" Width="1082" Height="105" Name="crystalReportViewer1"/>
+        <Viewer:CrystalReportsViewer HorizontalAlignment="Left" VerticalAlignment="Top" Width="1082" Height="701" Name="crystalReportViewer1" RenderTransformOrigin="0.5,0.5" ShowLogo="False" ShowNextPageButton="True" ShowOpenFileButton="True" ShowPrevPageButton="True" ShowPrintButton="True" ShowRefreshButton="True" ShowSearchTextButton="False" ShowStatusbar="False" ShowToggleSidePanelButton="True" ShowToolbar="True">
+            <Viewer:CrystalReportsViewer.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewer:CrystalReportsViewer.RenderTransform>
+        </Viewer:CrystalReportsViewer>
 
     </Grid>
 </Window>
