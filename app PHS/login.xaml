@@ -18,19 +18,19 @@
         </Grid>
         <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image"  Height="100"  HorizontalAlignment="Center"  Width="300" Margin="48,36,52,314"/>
 
-        <StackPanel>
-            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="45 215" Foreground="#f9aa33"/>
+        <StackPanel Margin="48,199,326,226">
+            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Foreground="#f9aa33"/>
         </StackPanel>
-        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="prueba" BorderBrush="#f9aa33" x:Name="nomUsuario"  materialDesign:HintAssist.Hint="Nombre de usuario"  FontSize="15" Margin="80,200,50,208"/>
+        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="admin" BorderBrush="#f9aa33" x:Name="nomUsuario"  materialDesign:HintAssist.Hint="Nombre de usuario"  FontSize="15" Margin="80,182,50,226"/>
 
-        <StackPanel Loaded="StackPanel_Loaded">
-            <materialDesign:PackIcon Kind="TextboxPassword" Height="25" Width="25" Margin="45,290,0,270" Foreground="#f9aa33" />
+        <StackPanel Loaded="StackPanel_Loaded" Margin="48,277,325,148" >
+            <materialDesign:PackIcon Kind="TextboxPassword" Height="25" Width="25" Foreground="#f9aa33" />
         </StackPanel>
-        <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"   BorderBrush="#f9aa33" x:Name="contraseña"  materialDesign:HintAssist.Hint="Contraseña" Margin="80,279,50,130" FontSize="15" KeyDown="contraseña_KeyDown"/>
-        <Button Width="300" x:Name="btnInicio" Margin="50,380,50,38" Click="BtnInicio_Click">Iniciar</Button>
+        <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"   BorderBrush="#f9aa33" x:Name="contraseña"  materialDesign:HintAssist.Hint="Contraseña" Margin="80,261,50,148" FontSize="15" KeyDown="contraseña_KeyDown"/>
+        <Button Width="300" x:Name="btnInicio" Margin="50,358,50,60" Click="BtnInicio_Click">Iniciar</Button>
 
-        <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,260" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-            <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 180 " HorizontalAlignment="Center"/>
+        <materialDesign:Snackbar IsActive="False" x:Name="messege"  HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+            <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376"  HorizontalAlignment="Center"/>
         </materialDesign:Snackbar>
     </Grid>
 </Window>

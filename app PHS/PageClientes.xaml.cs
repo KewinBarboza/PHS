@@ -26,54 +26,72 @@ namespace app_PHS
         {
             InitializeComponent();
         }
-
+        private void mensajes(string mensaje)
+        {
+            messege.IsActive=true;
+            messege.MessageQueue.Enqueue( mensaje );
+        }
         public void consultarClienteRif(string numRif)
         {
             DataTable dt = new DataTable();
             dt=NegClientes.consultarClienteRif( numRif);
-
-            for (int i = 0; i<dt.Rows.Count; i++)
+            if (dt.Rows.Count != 0)
             {
-                DataRow dr = dt.Rows[i];
-                nomCliente.Text=dr["nomCliente"].ToString();
-                codCliente.Text=dr["codCliente"].ToString();
-                rif.Text=dr["numRif"].ToString();
-                fax.Text=dr["numFax"].ToString();
-                codAnterior.Text=dr["codAnterior"].ToString();
+                for (int i = 0; i<dt.Rows.Count; i++)
+                {
+                    DataRow dr = dt.Rows[i];
+                    nomCliente.Text=dr["nomCliente"].ToString();
+                    codCliente.Text=dr["codCliente"].ToString();
+                    rif.Text=dr["numRif"].ToString();
+                    fax.Text=dr["numFax"].ToString();
+                    codAnterior.Text=dr["codAnterior"].ToString();
 
-                celCliente.Text=dr["celular"].ToString()+","+dr["telefono1"].ToString()+","+dr["telefono2"].ToString()+","+dr["telefono3"].ToString();
-                corCliente.Text=dr["email"].ToString();
-                webCliente.Text=dr["web"].ToString();
-                conCliente.Text=dr["contacto"].ToString()+"-"+dr["cargo"];
+                    celCliente.Text=dr["celular"].ToString()+","+dr["telefono1"].ToString()+","+dr["telefono2"].ToString()+","+dr["telefono3"].ToString();
+                    corCliente.Text=dr["email"].ToString();
+                    webCliente.Text=dr["web"].ToString();
+                    conCliente.Text=dr["contacto"].ToString()+"-"+dr["cargo"];
 
-                ciudad.Text=dr["ciudad"].ToString();
-                dirCliente.Text=dr["dirección"].ToString();
-                zonaMin.Text=dr["minZona"].ToString();
-                codPostal.Text=dr["codPostal"].ToString();
-                locCliente.Text=dr["dirLocal"].ToString();
+                    ciudad.Text=dr["ciudad"].ToString();
+                    dirCliente.Text=dr["dirección"].ToString();
+                    zonaMin.Text=dr["minZona"].ToString();
+                    codPostal.Text=dr["codPostal"].ToString();
+                    locCliente.Text=dr["dirLocal"].ToString();
 
-                agteRet.Text=dr["agteRet"].ToString();
-                cliEspcial.Text=dr["clientEsp"].ToString();
-                lote.Text=dr["lote"].ToString();
-                dctoPp.Text=dr["dctpPp"].ToString();
-                fecAtcv.Text=dr["fechaAct"].ToString();
-                saldo.Text=dr["saldo"].ToString();
-                clientAso.Text=dr["clientAso"].ToString();
-                tipClient.Text=dr["tipCliente"].ToString();
-                condPago.Text=dr["condPago"].ToString();
-                diasGrac.Text=dr["diasGrac"].ToString();
-                limCred.Text=dr["limCred"].ToString();
-                estatus.Text=dr["estatus"].ToString();
-                tipo.Text=dr["tipo"].ToString();
-                totCred.Text=dr["totCred"].ToString();
+                    agteRet.Text=dr["agteRet"].ToString();
+                    cliEspcial.Text=dr["clientEsp"].ToString();
+                    lote.Text=dr["lote"].ToString();
+                    dctoPp.Text=dr["dctpPp"].ToString();
+                    fecAtcv.Text=dr["fechaAct"].ToString();
+                    saldo.Text=dr["saldo"].ToString();
+                    clientAso.Text=dr["clientAso"].ToString();
+                    tipClient.Text=dr["tipCliente"].ToString();
+                    condPago.Text=dr["condPago"].ToString();
+                    diasGrac.Text=dr["diasGrac"].ToString();
+                    limCred.Text=dr["limCred"].ToString();
+                    estatus.Text=dr["estatus"].ToString();
+                    tipo.Text=dr["tipo"].ToString();
+                    totCred.Text=dr["totCred"].ToString();
+                }
+            }else
+            {
+                mensajes( "Numero de Rif no existe" );
             }
+            
         }
 
         private void consultarClientesNombre(string nomCliente)
         {
             DataTable dt = new DataTable();
             dt=NegClientes.consultarClientesNombre( nomCliente );
-            dataGridCliente.ItemsSource=dt.DefaultView;
+
+            if (dt.Rows.Count != 0)
+            {
+                dataGridCliente.ItemsSource=dt.DefaultView;
+            }
+            else
+            {
+                mensajes("Nombre de cliente no existe");
+            }
 
         }
 
@@ -81,12 +99,28 @@ namespace app_PHS
         {
             DataTable dt = new DataTable();
             dt=NegClientes.cunsultarClientesActivos(status);
-            dataGridCliente.ItemsSource=dt.DefaultView;
+
+            if (dt.Rows.Count!=0)
+            {
+                dataGridCliente.ItemsSource=dt.DefaultView;
+            }
+            else
+            {
+                mensajes( "Status no valido" );
+            }
+            
         }
 
         private void btnRifCliente_Click(object sender, RoutedEventArgs e)
         {
-            consultarClienteRif(txtRifCliente.Text);
+            if (txtRifCliente.Text != "")
+            {
+                consultarClienteRif(txtRifCliente.Text);
+            }
+            else
+            {
+                mensajes( "Inserte un valor valido" );
+            }
         }
 
         private void txtRifCliente_KeyDown(object sender, KeyEventArgs e)
@@ -100,7 +134,15 @@ namespace app_PHS
 
         private void btnNomCliente_Click(object sender, RoutedEventArgs e)
         {
-            consultarClientesNombre( txtnomCliente.Text );
+            if (txtnomCliente.Text!="")
+            {
+                consultarClientesNombre( txtnomCliente.Text );
+            }
+            else
+            {
+                mensajes( "Inserte un nombre valido" );
+            }
+           
         }
 
         private void txtnomCliente_KeyDown(object sender, KeyEventArgs e)
@@ -113,9 +155,17 @@ namespace app_PHS
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
-            WindowRepFactura p  = new WindowRepFactura();
-            p.reporteClientes(  rif.Text );
-            p.Show();
+            if (rif.Text!="0000")
+            {
+                WindowRepFactura p  = new WindowRepFactura();
+                p.reporteClientes( rif.Text );
+                p.Show();
+            }
+            else
+            {
+                mensajes( "Seleccione un cliente para poder crear el reporte" );
+            }
+            
         }
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
@@ -131,6 +181,22 @@ namespace app_PHS
         {
             
             cunsultarClientesActivos( Convert.ToInt32( status.SelectedIndex.ToString() ) );
+        }
+
+        private void btnImprimirGrid_Click(object sender, RoutedEventArgs e)
+        {
+            int numStatus =  Convert.ToInt32( status.SelectedIndex.ToString() );
+
+            if (numStatus == 0 || numStatus == 1)
+            {
+                WindowRepFactura p  = new WindowRepFactura();
+                p.reporteClientesStatus( numStatus );
+                p.Show();
+            }
+            else
+            {
+                mensajes( "Consulte el status para crear el reporte" );
+            }
         }
     }
 }

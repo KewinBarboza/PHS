@@ -28,12 +28,20 @@
             <Button x:Name="btnRifCliente" Click="btnRifCliente_Click" Width="100" Content="Consultar" Margin="280,147,20,457"></Button>
 
             <materialDesign:PackIcon Kind="ElevationRise" Height="25" Width="25" Margin="16,220,0,0" Foreground="#f9aa33"/>
-            <ComboBox materialDesign:HintAssist.Hint="Estatus" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Background="White" Margin="65,205,137,391" Height="40" x:Name="status">
+            <ComboBox materialDesign:HintAssist.Hint="Estatus" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Background="#f1f1f1f1" BorderBrush="#f9aa33" Margin="65,205,137,391" Height="40" x:Name="status">
                 <ComboBoxItem>Activos</ComboBoxItem>
                 <ComboBoxItem>Inactivos</ComboBoxItem>
             </ComboBox>
             <Button x:Name="btnStatus" Click="btnStatus_Click" Width="100" Content="Consultar" Margin="280,213,20,391"></Button>
 
+            <!-- long hand form for setting the message -->
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,330" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+
+            <Button  x:Name="btnImprimirGrid" Click="btnImprimirGrid_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="4,319,0,285" ToolTip="Exporta excel" >
+                <materialDesign:PackIcon Kind="FileExcel" Height="25" Width="25" HorizontalAlignment="Right"/>
+            </Button>
             <DataGrid x:Name="dataGridCliente" HorizontalAlignment="Left" Margin="0,356,0,0" VerticalAlignment="Top" Width="400" Height="280" MouseDoubleClick="dataGridCliente_MouseDoubleClick" IsReadOnly="True" Background="#f1f1f1f1"/>
         </Grid>
         <Grid Width="857" HorizontalAlignment="Right">

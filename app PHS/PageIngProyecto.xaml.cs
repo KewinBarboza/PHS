@@ -16,33 +16,28 @@ using System.Windows.Shapes;
 namespace app_PHS
 {
     /// <summary>
-    /// Lógica de interacción para PageVentas.xaml
+    /// Lógica de interacción para PageIngProyecto.xaml
     /// </summary>
-    public partial class PageVentas : Page
+    public partial class PageIngProyecto : Page
     {
-        public PageVentas()
+        public PageIngProyecto()
         {
             InitializeComponent();
         }
-        private void btnFacturas_Click(object sender, RoutedEventArgs e)
+
+        private void btnProcesos_Click(object sender, RoutedEventArgs e)
         {
-            //if (clsGeneral.factura==true)
-            //{
-            //    //mensajes( "Acceso denegado" );
-            //}
-            //else
-            //{
-                NavigationService.Navigate( new PageFacturas() );
-            //}
+            NavigationService.Navigate( new PageProcesos() );
         }
+
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate( new Home() );
         }
 
-        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        private void btnMaestroMateriales_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate( new PageClientes() );
+            NavigationService.Navigate( new PageMaestroMateriales());
         }
     }
 }

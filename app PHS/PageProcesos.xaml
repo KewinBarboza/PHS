@@ -1,0 +1,74 @@
+﻿<Page x:Class="app_PHS.PageProcesos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageProcesos"  Background="White" Height="636" Width="1257" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid  Width="400" HorizontalAlignment="Left" Background="#f1f1f1f1">
+            <TextBlock Foreground="Gray" Margin="57,10,248,0" TextAlignment="Center" TextWrapping="Wrap" Text="Procesos" VerticalAlignment="Top" FontSize="20" Height="32"/>
+            <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
+                <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+
+            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="10,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo del Ciclo"   Margin="43,87,159,504" FontSize="15" TextChanged="textBuscar_TextChanged" KeyDown="textBuscar_KeyDown"/>
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <materialDesign:PackIcon Kind="Graphql" Height="26" Width="25" Margin="10,170,0,0" Foreground="#f9aa33"/>
+            <ComboBox materialDesign:HintAssist.Hint="Indice de Diseño" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndMod" Margin="43,152,159,437"></ComboBox>
+
+            <materialDesign:PackIcon Kind="Cogs" Height="25" Width="25" Margin="10,235,0,0" Foreground="#f9aa33"/>
+            <ComboBox materialDesign:HintAssist.Hint="Indice de proceso" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndPro" Margin="43,220,159,376" KeyDown="comboIndPro_KeyDown"></ComboBox>
+            <Button x:Name="btnIndices" Click="btnIndices_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,228,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,280" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+        </Grid>
+        <Grid Width="857" HorizontalAlignment="Right">
+            <Grid>
+
+                <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="30,40,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Código del Ciclo" Margin="60,40,678,571" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Height="25"/>
+                <TextBlock Text="000000000" x:Name="codCiclo" Margin="187,40,343,571" FontSize="15" VerticalAlignment="Center" Height="25"/>
+
+                <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="30,94,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Descripcion" FontWeight="Bold" FontSize="15" Margin="60,94,678,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+                <TextBlock Text="xxxxxxxxx" x:Name="txtDescripcion"  FontSize="15" Margin="187,94,34,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+
+                <materialDesign:PackIcon Kind="FormatListNumbered" Height="25" Width="25" Margin="30,148,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Indices" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,148,743,463" Height="25"></TextBlock>
+
+                <materialDesign:PackIcon Kind="Graphql" Height="25" Width="25" Margin="187,149,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Diseño" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="217,149,583,463" Height="24"></TextBlock>
+                <TextBlock Text="00" x:Name="txtDiseño" FontSize="15" VerticalAlignment="Center" Margin="274,150,526,462" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="Cogs" Height="25" Width="25" Margin="365,148,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Proceso" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="395,149,400,463" Height="24"></TextBlock>
+                <TextBlock Text="00" x:Name="txtProceso" FontSize="15" VerticalAlignment="Center" Margin="457,150,343,462" Height="24"></TextBlock>
+
+                <!--<materialDesign:PackIcon Kind="Update" Height="25" Width="25" Margin="560,149,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Actualización" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="590,149,165,463" Height="24"></TextBlock>
+                <TextBlock Text="00" x:Name="txtActualizacion" FontSize="15" VerticalAlignment="Center" Margin="692,150,108,462" Height="24"></TextBlock>-->
+
+                <materialDesign:PackIcon Kind="DateRange" Height="25" Width="25" Margin="30,208,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Fecha de Emisión" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,208,670,403" Height="25"></TextBlock>
+                <TextBlock Text="00/00/000" x:Name="txtFecEmision" FontSize="15" VerticalAlignment="Center" Margin="187,208,591,404" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="AvTimer" Height="25" Width="25" Margin="365,207,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Total Tiempo Standar" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="395,207,308,404" Height="25"></TextBlock>
+                <TextBlock Text="00000" x:Name="txtTimEstantar" FontSize="15" VerticalAlignment="Center" Margin="549,207,229,405" Height="24"></TextBlock>
+
+            </Grid>
+            <DataGrid HorizontalAlignment="Left" x:Name="GridPartesPiezas" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+
+        </Grid>
+    </Grid>
+</Page>

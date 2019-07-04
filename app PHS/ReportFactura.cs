@@ -16,14 +16,14 @@ namespace app_PHS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class ReportFactura : ReportClass {
         
-        public CrystalReport1() {
+        public ReportFactura() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "ReportFactura.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace app_PHS {
         
         public override string FullResourceName {
             get {
-                return "app_PHS.CrystalReport1.rpt";
+                return "app_PHS.ReportFactura.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace app_PHS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedReportFactura : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedReportFactura() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace app_PHS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            ReportFactura rpt = new ReportFactura();
             rpt.Site = this.Site;
             return rpt;
         }

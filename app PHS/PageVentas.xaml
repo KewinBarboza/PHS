@@ -24,9 +24,12 @@
             <materialDesign:PackIcon Kind="AccountSupervisor" Height="80" Width="80" VerticalAlignment="Top"/>
         </Button>
         <TextBlock HorizontalAlignment="Center" Text="Clientes" FontSize="14" Foreground="Gray" Margin="709,356,499,253"/>
-
+        
+        
         <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
             <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
         </materialDesign:Snackbar>
+        
+        
     </Grid>
 </Page>

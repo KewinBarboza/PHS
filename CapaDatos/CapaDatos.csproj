@@ -98,6 +98,8 @@
   <ItemGroup>
     <Compile Include="clsClientes.cs" />
     <Compile Include="clsFacturas.cs" />
+    <Compile Include="clsMaestroMateriales.cs" />
+    <Compile Include="clsProcesos.cs" />
     <Compile Include="clsLogin.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

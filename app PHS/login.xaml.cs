@@ -37,30 +37,33 @@ namespace app_PHS
             DataTable dt = new DataTable();
             dt = NegLogin.inicioSesion(nomUsuario.Text, contraseña.Password.ToString());
 
-            foreach (DataRow row in dt.Rows)
+            if (dt.Rows.Count ==0)
             {
-                if (dt.Rows.Count == 0)
+                mensajes( "Usuario o contraseña inválida intente de nuevo" );
+            }
+            else
+            {
+                foreach (DataRow row in dt.Rows)
                 {
-                    mensajes("Usuario o contraseña inválida intente de nuevo");
-                    //contraseña.Password = "";
-                    //nomUsuario.Text = "";
 
-                }
-                else
-                {
-                    clsGeneral.factura = Convert.ToInt32( row["factura"].ToString() );
-                    clsGeneral.RRHH =Convert.ToInt32( row["RRHH"].ToString() ) ;
-                    clsGeneral.finanza =Convert.ToInt32( row["finanza"].ToString() ) ;
-                    clsGeneral.contabilidad =Convert.ToInt32( row["contabilidad"].ToString() ) ;
-                    clsGeneral.inventario =Convert.ToInt32( row["inventario"].ToString() ) ;
-                    clsGeneral.compras =Convert.ToInt32( row["compras"].ToString() ) ;
-                    clsGeneral.despacho =Convert.ToInt32( row["despacho"].ToString() ) ;
-                    clsGeneral.ing_contabilidad =Convert.ToInt32( row["ing_contabilidad"].ToString() ) ;
+                    clsGeneral.factura=Convert.ToBoolean( row["factura"].ToString() );
+                    clsGeneral.RRHH=Convert.ToBoolean( row["RRHH"].ToString() );
+                    clsGeneral.finanza=Convert.ToBoolean( row["finanza"].ToString() );
+                    clsGeneral.contabilidad=Convert.ToBoolean( row["contabilidad"].ToString() );
+                    clsGeneral.inventario=Convert.ToBoolean( row["inventario"].ToString() );
+                    clsGeneral.compras=Convert.ToBoolean( row["compras"].ToString() );
+                    clsGeneral.despacho=Convert.ToBoolean( row["despacho"].ToString() );
+                    clsGeneral.ing_contabilidad=Convert.ToBoolean( row["ing_contabilidad"].ToString() );
+                    clsGeneral.configuracion=Convert.ToBoolean( row["configuracion"].ToString() );
+
+
                     PHS form = new PHS();
                     this.Hide();
                     form.ShowDialog();
+
                 }
             }
+            
 
         }
 

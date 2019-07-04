@@ -4,13 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using CapaNegocios;
-using ClosedXML.Excel;
-using System.Diagnostics;
-using Microsoft.Win32;
-using System.Linq;
-using Microsoft.Office.Interop.Excel;
-using System.Windows.Controls;
-using SAPBusinessObjects.WPF.Viewer;
+
 
 namespace app_PHS
 {

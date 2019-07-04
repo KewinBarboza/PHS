@@ -33,7 +33,7 @@ namespace app_PHS
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)
         {
-            if (clsGeneral.factura==1)
+            if (clsGeneral.factura==false)
             {
                 mensajes( "Acceso denegado" );
             }
@@ -50,42 +50,99 @@ namespace app_PHS
 
         private void BtnRRHH_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.RRHH==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void btnFinanza_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.finanza==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void BtnContabilidad_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.contabilidad==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void BtnInventario_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.inventario==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void BtnCompras_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.compras==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void BtnDespacho_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.despacho==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                //NavigationService.Navigate( new PageVentas() );
+            }
         }
 
         private void BtnIngProyecto_Click(object sender, RoutedEventArgs e)
         {
-
+            if (clsGeneral.ing_contabilidad==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                NavigationService.Navigate( new PageIngProyecto() );
+            }
         }
 
         private void BtnConfiguracion_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate( new PageConfiguracion() );
+            if (clsGeneral.configuracion==false)
+            {
+                mensajes( "Acceso denegado" );
+            }
+            else
+            {
+                NavigationService.Navigate( new PageConfiguracion() );
+            }
+
         }
 
        

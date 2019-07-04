@@ -12,14 +12,15 @@ namespace app_PHS
         // Variable globales de la aplicación 
         //----------------------------------------------------------
 
-        public static int factura { get; set; }
-        public static int RRHH { get; set; }
-        public static int finanza { get; set; }
-        public static int contabilidad { get; set; }
-        public static int inventario { get; set; }
-        public static int compras { get; set; }
-        public static int despacho { get; set; }
-        public static int ing_contabilidad { get; set; }
+        public static bool factura { get; set; }
+        public static bool RRHH { get; set; }
+        public static bool finanza { get; set; }
+        public static bool contabilidad { get; set; }
+        public static bool inventario { get; set; }
+        public static bool compras { get; set; }
+        public static bool despacho { get; set; }
+        public static bool ing_contabilidad { get; set; }
+        public static bool configuracion { get; set; }
 
         //private void mensajes(string mensaje)
         //{

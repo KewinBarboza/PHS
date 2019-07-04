@@ -31,7 +31,7 @@ namespace app_PHS
         public void reporte(int numF)
         {
             crystalReportViewer1.Owner=this;
-            CrystalReport1 reporte = new CrystalReport1();
+            ReportFactura reporte = new ReportFactura();
             reporte.SetParameterValue( "@numFactura", Convert.ToInt32( numF ) );
             crystalReportViewer1.ViewerCore.ReportSource=reporte;
         }
@@ -41,6 +41,14 @@ namespace app_PHS
             crystalReportViewer1.Owner=this;
             ReportClientes reporte = new ReportClientes();
             reporte.SetParameterValue( "@numRif",  numRif  );
+            crystalReportViewer1.ViewerCore.ReportSource=reporte;
+        }
+
+        public void reporteClientesStatus(int numStatus)
+        {
+            crystalReportViewer1.Owner=this;
+            ReportClienteStatus reporte = new ReportClienteStatus();
+            reporte.SetParameterValue( "@status", numStatus );
             crystalReportViewer1.ViewerCore.ReportSource=reporte;
         }
 

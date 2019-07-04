@@ -98,6 +98,8 @@
   <ItemGroup>
     <Compile Include="NegClientes.cs" />
     <Compile Include="NegFacturas.cs" />
+    <Compile Include="NegMaestroMateriales.cs" />
+    <Compile Include="NegProcesos.cs" />
     <Compile Include="NegLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
