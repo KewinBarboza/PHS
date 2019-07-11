@@ -16,11 +16,19 @@
                 <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="328,41,0,563" ToolTip="Imprimir Reporte">
+                <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+            
             <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="5 105" Foreground="#f9aa33"/>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Estructura"   Margin="43,87,159,504" FontSize="15" />
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Estructura"   Margin="43,87,159,504" FontSize="15" TextChanged="textBuscar_TextChanged" Loaded="textBuscar_Loaded" KeyDown="textBuscar_KeyDown_1" />
             <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
-            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,280" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+            <materialDesign:PackIcon Kind="Cogs" Height="26" Width="25" Margin="10,170,0,0" Foreground="#f9aa33"/>
+            <ComboBox materialDesign:HintAssist.Hint="Indice de proceso" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndModificacion" Margin="43,152,159,437"></ComboBox>
+            <Button x:Name="btnIndices" Click="btnIndices_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,164,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,320" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
                 <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
             </materialDesign:Snackbar>
         </Grid>

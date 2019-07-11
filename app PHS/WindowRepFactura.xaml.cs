@@ -52,6 +52,35 @@ namespace app_PHS
             crystalReportViewer1.ViewerCore.ReportSource=reporte;
         }
 
+        public void reportePartesPiezasIndice(string codigo, string indProceso, string indDiseño)
+        {
+            crystalReportViewer1.Owner=this;
+            ReportProcesos reporte = new ReportProcesos();
+            reporte.SetParameterValue( "@codigo", codigo );
+            reporte.SetParameterValue( "@indProceso", indProceso );
+            reporte.SetParameterValue( "@IndModificacion", indDiseño );
+            crystalReportViewer1.ViewerCore.ReportSource=reporte;
+        }
 
+        public void reporteMaestroMateriales(string codigo, string indModificacion, int opc)
+        {
+            crystalReportViewer1.Owner=this;
+            ReportMaestroMateriales reporte = new ReportMaestroMateriales();
+            reporte.SetParameterValue( "@codigo", codigo );
+            reporte.SetParameterValue( "@indModificacion", indModificacion );
+            reporte.SetParameterValue( "@opc", opc );
+            crystalReportViewer1.ViewerCore.ReportSource=reporte;
+        }
+
+        public void reporteCicloProceso(string codigo, string indModificacion,string indProceso, int opc)
+        {
+            crystalReportViewer1.Owner=this;
+            ReportCicloProduccion reporte = new ReportCicloProduccion();
+            reporte.SetParameterValue( "@codigo", codigo );
+            reporte.SetParameterValue( "@indModificacion", indModificacion );
+            reporte.SetParameterValue( "@indProceso", indProceso );
+            reporte.SetParameterValue( "@opc", opc );
+            crystalReportViewer1.ViewerCore.ReportSource=reporte;
+        }
     }
 }

@@ -96,6 +96,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCicloProceso.cs" />
     <Compile Include="clsClientes.cs" />
     <Compile Include="clsFacturas.cs" />
     <Compile Include="clsMaestroMateriales.cs" />

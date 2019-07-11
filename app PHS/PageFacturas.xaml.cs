@@ -159,6 +159,7 @@ namespace app_PHS
         }
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
+           
             WindowRepFactura p  = new WindowRepFactura();
             p.reporte( Convert.ToInt32( numFactura.Text ) );
             p.Show();

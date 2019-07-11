@@ -39,5 +39,10 @@ namespace app_PHS
         {
             NavigationService.Navigate( new PageMaestroMateriales());
         }
+
+        private void btnCicloProduccion_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate( new PageCicloProduccion() );
+        }
     }
 }

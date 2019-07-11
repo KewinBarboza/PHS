@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
+using System.Data;
 
 namespace CapaNegocios
 {
-    class NegMaestroMateriales
+    public class NegMaestroMateriales
     {
+        public static DataTable consultarMaestroMateriales(string codigo, string indModificacion, int opc)
+        {
+            return new clsMaestroMateriales().consultarMaestroMateriales( codigo, indModificacion, opc );
+        }
     }
 }
+ 

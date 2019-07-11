@@ -142,6 +142,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PageCicloProduccion.xaml.cs">
+      <DependentUpon>PageCicloProduccion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageClientes.xaml.cs">
       <DependentUpon>PageClientes.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,12 @@
     <Compile Include="PageVentas.xaml.cs">
       <DependentUpon>PageVentas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReportCicloProduccion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportCicloProduccion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,10 +178,26 @@
       <DependentUpon>ReportClienteStatus.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportMaestroMateriales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportMaestroMateriales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportProcesos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportProcesos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WindowRepFactura.xaml.cs">
       <DependentUpon>WindowRepFactura.xaml</DependentUpon>
     </Compile>
     <Page Include="login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageCicloProduccion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -258,6 +283,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="ReportCicloProduccion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportCicloProduccion.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportFactura.cs</LastGenOutput>
@@ -273,6 +302,14 @@
     <EmbeddedResource Include="ReportClienteStatus.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportClienteStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMaestroMateriales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportMaestroMateriales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProcesos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportProcesos.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

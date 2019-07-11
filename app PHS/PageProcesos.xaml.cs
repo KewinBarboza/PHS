@@ -155,5 +155,20 @@ namespace app_PHS
                 btnBuscar_Click( null, null );
             }
         }
+
+        private void btnImprimir_Click(object sender, RoutedEventArgs e)
+        {
+            if (codCiclo.Text!="000000000")
+            {
+                WindowRepFactura p  = new WindowRepFactura();
+                p.reportePartesPiezasIndice( codCiclo.Text, txtProceso.Text, txtDiseño.Text );
+                p.Show();
+            }
+            else
+            {
+              mensajes("ingrese un código para ejecutar esta acción");
+            }
+            
+        }
     }
 }
