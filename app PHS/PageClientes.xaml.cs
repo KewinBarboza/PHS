@@ -111,46 +111,62 @@ namespace app_PHS
             
         }
 
-        private void btnRifCliente_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtRifCliente.Text != "")
-            {
-                consultarClienteRif(txtRifCliente.Text);
-            }
-            else
-            {
-                mensajes( "Inserte un valor valido" );
-            }
-        }
-
         private void txtRifCliente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key==Key.Return)
             {
-                btnRifCliente_Click( null, null );
+                btnNomCliente_Click( null, null );
             }
         }
 
 
         private void btnNomCliente_Click(object sender, RoutedEventArgs e)
         {
-            if (txtnomCliente.Text!="")
+            if (txtnomCliente.Text =="" && txtRifCliente.Text =="" && status.SelectedItem ==null)
             {
-                consultarClientesNombre( txtnomCliente.Text );
+                mensajes( "Inserte un dato valido" );
+            }
+            else if (txtnomCliente.Text != "" && txtRifCliente.Text != "" || txtnomCliente.Text!=""&&status.SelectedItem!=null ||txtRifCliente.Text!=""&&status.SelectedItem!=null)
+            {
+                mensajes( "Ingrese un único valor" );
+                txtRifCliente.Text=string.Empty;
+                txtnomCliente.Text=string.Empty;
+                status.SelectedItem=null;
             }
             else
             {
-                mensajes( "Inserte un nombre valido" );
+                if (txtRifCliente.Text==""&&status.SelectedItem==null)
+                {
+                    if (txtnomCliente.Text =="")
+                    {
+                        mensajes( "Inserte un nombre valido" );
+                    }
+                    else
+                    {
+                        consultarClientesNombre( txtnomCliente.Text );
+                        txtnomCliente.Text=string.Empty;
+                    }
+                }
+                else if (txtnomCliente.Text =="" &&status.SelectedItem==null)
+                {
+                    if (txtRifCliente.Text!="")
+                    {
+                        consultarClienteRif( txtRifCliente.Text );
+                        txtRifCliente.Text=string.Empty;
+                    }
+                    else
+                    {
+                        mensajes( "Inserte un valor valido" );
+                    }
+                }
+                else if (txtnomCliente.Text =="" && txtRifCliente.Text=="")
+                {
+                    cunsultarClientesActivos( Convert.ToInt32( status.SelectedIndex.ToString() ) );
+                    status.SelectedItem=null;
+                }
+
             }
            
-        }
-
-        private void txtnomCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key==Key.Return)
-            {
-                btnNomCliente_Click( null, null );
-            }
         }
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
@@ -177,12 +193,6 @@ namespace app_PHS
             consultarClienteRif( (dataGridCliente.CurrentItem as DataRowView).Row.ItemArray[0].ToString() );
         }
 
-        private void btnStatus_Click(object sender, RoutedEventArgs e)
-        {
-            
-            cunsultarClientesActivos( Convert.ToInt32( status.SelectedIndex.ToString() ) );
-        }
-
         private void btnImprimirGrid_Click(object sender, RoutedEventArgs e)
         {
             int numStatus =  Convert.ToInt32( status.SelectedIndex.ToString() );
@@ -196,6 +206,21 @@ namespace app_PHS
             else
             {
                 mensajes( "Consulte el status para crear el reporte" );
+            }
+        }
+
+        private void status_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return)
+            {
+                btnNomCliente_Click( null, null );
+            }
+        }
+        private void txtnomCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return)
+            {
+                btnNomCliente_Click( null, null );
             }
         }
     }

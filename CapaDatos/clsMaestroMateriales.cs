@@ -20,13 +20,14 @@ namespace CapaDatos
         public string indModificacion { get; set; }
         public int opc { get; set; }
 
-        public DataTable consultarMaestroMateriales(string codigo, string indModificacion, int opc)
+        public DataTable consultarMaestroMateriales(string codigo, string indModificacion,string desc, int opc)
         { 
             comando.Connection=conexion.AbrirConexion();
             comando.CommandText="mstroMateriales";
             comando.CommandType=CommandType.StoredProcedure;
             comando.Parameters.AddWithValue( "@codigo", codigo );
             comando.Parameters.AddWithValue( "@indModificacion", indModificacion );
+            comando.Parameters.AddWithValue( "@desc", desc );
             comando.Parameters.AddWithValue( "@opc", opc );
             leer=comando.ExecuteReader();
             tabla.Load(leer);

@@ -142,20 +142,57 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clsSeguridad.cs" />
     <Compile Include="PageCicloProduccion.xaml.cs">
       <DependentUpon>PageCicloProduccion.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageClientes.xaml.cs">
       <DependentUpon>PageClientes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageCompras.xaml.cs">
+      <DependentUpon>PageCompras.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageCuentaProveedores.xaml.cs">
+      <DependentUpon>PageCuentaProveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFichaTrabajador.xaml.cs">
+      <DependentUpon>PageFichaTrabajador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageHistoricoCompras.xaml.cs">
+      <DependentUpon>PageHistoricoCompras.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageHistoricoSueldo.xaml.cs">
+      <DependentUpon>PageHistoricoSueldo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageIngProyecto.xaml.cs">
       <DependentUpon>PageIngProyecto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageInventario.xaml.cs">
+      <DependentUpon>PageInventario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageInventarioAdministradora.xaml.cs">
+      <DependentUpon>PageInventarioAdministradora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageInventarioInversora.xaml.cs">
+      <DependentUpon>PageInventarioInversora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageInventarioTratamaq.xaml.cs">
+      <DependentUpon>PageInventarioTratamaq.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageMaestroMateriales.xaml.cs">
       <DependentUpon>PageMaestroMateriales.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageMaestroProveedores.xaml.cs">
+      <DependentUpon>PageMaestroProveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageProcesos.xaml.cs">
       <DependentUpon>PageProcesos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageRecursoHumano.xaml.cs">
+      <DependentUpon>PageRecursoHumano.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSopDatosTecnicos.xaml.cs">
+      <DependentUpon>PageSopDatosTecnicos.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageVentas.xaml.cs">
       <DependentUpon>PageVentas.xaml</DependentUpon>
@@ -178,6 +215,72 @@
       <DependentUpon>ReportClienteStatus.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportFichaTrabajador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportFichaTrabajador.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportHistoricoSueldo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHistoricoSueldo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioAdministradoraMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioAdministradoraMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioAdministradoraMovimiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioAdministradoraMovimiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioAdministradoraMovMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioAdministradoraMovMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioInverosoraMovimiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioInverosoraMovimiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioInversoraMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioInversoraMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioInversoraMovMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioInversoraMovMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioTratamaqMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioTratamaqMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioTratamaqMovimiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioTratamaqMovimiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportInventarioTratamaqMovMaterial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportInventarioTratamaqMovMaterial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportMaestroMateriales.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +291,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportProcesos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportSopDatosTecnicos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportSopDatosTecnicos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WindowRepFactura.xaml.cs">
@@ -205,7 +314,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageCompras.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageConfiguracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageCuentaProveedores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,7 +330,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageFichaTrabajador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageHistoricoCompras.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageHistoricoSueldo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageIngProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageInventario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageInventarioAdministradora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageInventarioInversora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageInventarioTratamaq.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,7 +366,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageMaestroProveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageProcesos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageRecursoHumano.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSopDatosTecnicos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,6 +460,50 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportClienteStatus.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportFichaTrabajador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportFichaTrabajador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportHistoricoSueldo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportHistoricoSueldo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioAdministradoraMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioAdministradoraMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioAdministradoraMovimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioAdministradoraMovimiento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioAdministradoraMovMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioAdministradoraMovMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioInverosoraMovimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioInverosoraMovimiento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioInversoraMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioInversoraMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioInversoraMovMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioInversoraMovMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioTratamaqMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioTratamaqMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioTratamaqMovimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioTratamaqMovimiento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInventarioTratamaqMovMaterial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportInventarioTratamaqMovMaterial.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportMaestroMateriales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportMaestroMateriales.cs</LastGenOutput>
@@ -310,6 +511,10 @@
     <EmbeddedResource Include="ReportProcesos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportProcesos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSopDatosTecnicos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportSopDatosTecnicos.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,76 @@
+﻿<Page x:Class="app_PHS.PageInventarioAdministradora"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageInventarioAdministradora" Background="White" Width="1257" Height="636" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Width="400" HorizontalAlignment="Left" Background="#f1f1f1f1">
+            <TextBlock Foreground="Gray" Margin="57,10,190,0" TextAlignment="Center" TextWrapping="Wrap" Text="Administradora" VerticalAlignment="Top" FontSize="20" Height="32"/>
+            <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
+                <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
+                <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <TextBlock Foreground="Gray" Margin="16,53,194,0" TextAlignment="Center" TextWrapping="Wrap" Text="Seleccione el tipo de consulta" VerticalAlignment="Top" FontSize="14" Height="17"/>
+
+            <RadioButton x:Name="tipMovimiento" Content="Tipo Movimiento" Click="tipMovimiento_Click" FontSize="11" HorizontalAlignment="Left" Margin="16,83,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="codMaterial" Content="Codigo Material" Click="codMaterial_Click"  FontSize="11" HorizontalAlignment="Left" Margin="135,83,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="matMovimiento" Content="Material y tipo moviento" Click="matMovimiento_Click" FontSize="11" HorizontalAlignment="Left" Margin="247,83,0,0" VerticalAlignment="Top"/>
+
+            <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="32,133,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtDescripcion" materialDesign:HintAssist.Hint="Descripción o código"   Margin="66,106,36,478" FontSize="20" KeyDown="txtDescripcion_KeyDown"/>
+
+            <materialDesign:PackIcon Kind="CallMissed" Height="26" Width="25" Margin="36,200,0,0" Foreground="#f9aa33" RenderTransformOrigin="0.44,-0.019"/>
+            <ComboBox materialDesign:HintAssist.Hint="Tipo movimiento" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboTipMovimiento" Margin="66,175,32,410" Height="51" FontSize="20"></ComboBox>
+
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtMaterialBuscar" materialDesign:HintAssist.Hint="Material"   Margin="66,245,36,342" FontSize="20"/>
+            <materialDesign:PackIcon Kind="Crop54" Height="24" Width="25" Margin="36,270,0,0" Foreground="#f9aa33" RenderTransformOrigin="0.48,1.347"/>
+
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f9aa33" x:Name="fechaIni" materialDesign:HintAssist.Hint="Fecha inicio"  Margin="36,309,222,275" FontSize="20" Height="52" />
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f9aa33" x:Name="fechaFin" materialDesign:HintAssist.Hint="Fecha fin"  Margin="216,309,36,275" FontSize="20" Height="52"/>
+
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="135,376,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <DataGrid x:Name="GridAdministradora" HorizontalAlignment="Left" Margin="0,423,-2,0" VerticalAlignment="Top" Width="400" Height="203" Background="#f3f3f3" MouseDoubleClick="GridAdministradora_MouseDoubleClick" IsReadOnly="True" />
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+        </Grid>
+        <Grid Width="857" HorizontalAlignment="Right">
+            <Grid>
+                <materialDesign:PackIcon Kind="CallMissed" Height="25" Width="25" Margin="30,40,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Tipo de movimiento" Margin="60,40,647,571" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Height="25"/>
+                <TextBlock Text="000000000" x:Name="txtMovimiento" Margin="215,40,315,571" FontSize="15" VerticalAlignment="Center" Height="25"/>
+
+                <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="30,94,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Descripción" FontWeight="Bold" FontSize="15" Margin="60,94,714,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+                <TextBlock Text="xxxxxxxxx" x:Name="txtDescripción"  FontSize="15" Margin="161,94,60,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+
+                <materialDesign:PackIcon Kind="Crop54" Height="25" Width="25" Margin="30,148,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Material" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,149,727,463" Height="24"></TextBlock>
+                <TextBlock Text="00000000000" x:Name="txtMaterialD" FontSize="15" VerticalAlignment="Center" Margin="135,148,349,464" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="DateRange" Height="25" Width="25" Margin="30,208,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Fecha desde" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,208,701,403" Height="25"></TextBlock>
+                <TextBlock Text="00/00/0000" x:Name="txtFecDesde" FontSize="15" VerticalAlignment="Center" Margin="161,209,617,403" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="DateRange" Height="25" Width="25" Margin="306,207,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Fecha hasta" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="336,207,433,404" Height="25"></TextBlock>
+                <TextBlock Text="00/00/0000" x:Name="txtFecHasta" FontSize="15" VerticalAlignment="Center" Margin="429,208,349,404" Height="24"></TextBlock>
+
+            </Grid>
+            <DataGrid HorizontalAlignment="Left" x:Name="GridInventarioAdministradora" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+
+        </Grid>
+    </Grid>
+</Page>

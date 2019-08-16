@@ -44,5 +44,10 @@ namespace app_PHS
         {
             NavigationService.Navigate( new PageCicloProduccion() );
         }
+
+        private void btnSopDatosTecnicos_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate( new PageSopDatosTecnicos() );
+        }
     }
 }

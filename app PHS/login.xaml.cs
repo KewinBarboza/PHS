@@ -35,7 +35,7 @@ namespace app_PHS
         private void inicioSesion()
         {
             DataTable dt = new DataTable();
-            dt = NegLogin.inicioSesion(nomUsuario.Text, contraseña.Password.ToString());
+            dt = NegLogin.inicioSesion(nomUsuario.Text, clsSeguridad.Encriptar( contraseña.Password.ToString() ) );
 
             if (dt.Rows.Count ==0)
             {

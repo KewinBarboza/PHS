@@ -24,14 +24,18 @@ namespace app_PHS
 
         private void registrarUsuarios()
         {
+            //encriptamos la cadena inicial       
+
+            //ahora desencriptamos
+            
             if (idUs.Text != "0" && idRo.Text != "0")
             {
-                NegLogin.registrarUsuarios(Convert.ToInt32(idUs.Text), Convert.ToInt32( idRo.Text ),cedula.Text, nomUsuario.Text,contraseña.Password, cedula.Text, Convert.ToBoolean( ventas.IsChecked ) , Convert.ToBoolean( RRHH.IsChecked ) , Convert.ToBoolean( finanzas.IsChecked ) , Convert.ToBoolean( contabilidad.IsChecked ) , Convert.ToBoolean( inventario.IsChecked ), Convert.ToBoolean( compras.IsChecked ), Convert.ToBoolean( despacho.IsChecked ), Convert.ToBoolean( ing_proyecto.IsChecked ), Convert.ToBoolean(configuracion.IsChecked) );
+                NegLogin.registrarUsuarios(Convert.ToInt32(idUs.Text), Convert.ToInt32( idRo.Text ),cedula.Text, nomUsuario.Text, clsSeguridad.Encriptar( contraseña.Password ), cedula.Text, Convert.ToBoolean( ventas.IsChecked ) , Convert.ToBoolean( RRHH.IsChecked ) , Convert.ToBoolean( finanzas.IsChecked ) , Convert.ToBoolean( contabilidad.IsChecked ) , Convert.ToBoolean( inventario.IsChecked ), Convert.ToBoolean( compras.IsChecked ), Convert.ToBoolean( despacho.IsChecked ), Convert.ToBoolean( ing_proyecto.IsChecked ), Convert.ToBoolean(configuracion.IsChecked) );
                 mensajes("Usuario actualizado con exito");
             }
             else
             {
-                NegLogin.registrarUsuarios( Convert.ToInt32( idUs.Text ), Convert.ToInt32( idRo.Text ), cedula.Text, nomUsuario.Text, contraseña.Password, cedula.Text, Convert.ToBoolean( ventas.IsChecked ), Convert.ToBoolean( RRHH.IsChecked ), Convert.ToBoolean( finanzas.IsChecked ), Convert.ToBoolean( contabilidad.IsChecked ), Convert.ToBoolean( inventario.IsChecked ), Convert.ToBoolean( compras.IsChecked ), Convert.ToBoolean( despacho.IsChecked ), Convert.ToBoolean( ing_proyecto.IsChecked ), Convert.ToBoolean( configuracion.IsChecked ) );
+                NegLogin.registrarUsuarios( Convert.ToInt32( idUs.Text ), Convert.ToInt32( idRo.Text ), cedula.Text, nomUsuario.Text, clsSeguridad.Encriptar( contraseña.Password ), cedula.Text, Convert.ToBoolean( ventas.IsChecked ), Convert.ToBoolean( RRHH.IsChecked ), Convert.ToBoolean( finanzas.IsChecked ), Convert.ToBoolean( contabilidad.IsChecked ), Convert.ToBoolean( inventario.IsChecked ), Convert.ToBoolean( compras.IsChecked ), Convert.ToBoolean( despacho.IsChecked ), Convert.ToBoolean( ing_proyecto.IsChecked ), Convert.ToBoolean( configuracion.IsChecked ) );
                 mensajes( "Usuario registrado con exito" );
             }
         }
@@ -43,11 +47,10 @@ namespace app_PHS
 
             for (int i = 0; i<dt.Rows.Count; i++)
             {
-                listUsuarios.Items.Add("CI:"+ dt.Rows[i]["idRol"].ToString() );
+                listUsuarios.Items.Add(dt.Rows[i]["idRol"].ToString() );
             }
 
         }
-
         private void limpiarCampos()
         {
             nomUsuario.Text=string.Empty;
@@ -102,7 +105,7 @@ namespace app_PHS
             for (int i = 0; i<dt.Rows.Count; i++)
             {
                 nomUsuario.Text = dt.Rows[i]["nom_usuario"].ToString();
-                contraseña.Password=dt.Rows[i]["clave"].ToString();
+                contraseña.Password=clsSeguridad.DesEncriptar( dt.Rows[i]["clave"].ToString() );
                 cedula.Text=dt.Rows[i]["idRol"].ToString();
                 idRo.Text=dt.Rows[i]["idRo"].ToString();
                 idUs.Text=dt.Rows[i]["idUs"].ToString();

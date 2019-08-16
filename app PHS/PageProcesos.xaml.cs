@@ -43,17 +43,18 @@ namespace app_PHS
             }
             else
             {
+                dataGridProceso.ItemsSource=dt.DefaultView;
+
+                for (int i = 0; i<3; i++)
+                {
+                    dataGridProceso.Columns[i].Visibility=Visibility.Collapsed;
+                }
+
                 for (int i = 0; i<dt.Rows.Count; i++)
                 {
                     codCiclo.Text=dt.Rows[i]["codigo"].ToString();
-
-                    comboIndMod.Items.Add( dt.Rows[i]["ind_modificacion"].ToString() );
-                    comboIndPro.Items.Add( dt.Rows[i]["ind_proceso"].ToString() );
-
-                    consultarParasPiezasIndice( codCiclo.Text, dt.Rows[i]["ind_modificacion"].ToString(), dt.Rows[i]["ind_proceso"].ToString() );
+                    consultarParasPiezasIndice( codCiclo.Text, dt.Rows[i]["ind_Diseño"].ToString(), dt.Rows[i]["ind_Proceso"].ToString() );
                 }
-                comboIndMod.IsEnabled=true;
-                comboIndPro.IsEnabled=true;
             }
            
         }
@@ -81,11 +82,26 @@ namespace app_PHS
                     suma += Convert.ToDecimal(dt.Rows[i]["Tiempo_St"].ToString());
                     codCiclo.Text=dt.Rows[i]["codigo"].ToString();
                     txtDescripcion.Text=dt.Rows[i]["Descripcion"].ToString();
-                    txtDiseño.Text=dt.Rows[i]["ind_modificacion"].ToString();
-                    txtProceso.Text=dt.Rows[i]["ind_proceso"].ToString();
+                    txtDiseño.Text=dt.Rows[i]["ind_Diseño"].ToString();
+                    txtProceso.Text=dt.Rows[i]["ind_Proceso"].ToString();
                     txtFecEmision.Text=dt.Rows[i]["fec_emicion"].ToString();
                     txtTimEstantar.Text=suma.ToString();
                 }
+            }
+        }
+
+        private void consultarPartesPiezasDescripcion()
+        {
+            DataTable dt = new DataTable();
+            dt=NegProcesos.consultarPartesPiezasDescripcion( txtDescrpcionCiclo.Text );
+
+            if (dt.Rows.Count == 0)
+            {
+                mensajes( "Descripción inválida intente de nuevo" );
+            }
+            else
+            {
+                dataGridProceso.ItemsSource=dt.DefaultView;
             }
         }
 
@@ -96,55 +112,28 @@ namespace app_PHS
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            if (textBuscar.Text=="")
+            if (textBuscar.Text=="" && txtDescrpcionCiclo.Text =="")
             {
                 mensajes( "Ingrese un codigo para ejecutar esta acción");
             }
             else
             {
-                comboIndPro.Items.Clear();
-                comboIndMod.Items.Clear();
-                consultarPartesPiezas();
-            }
-        }
-
-        private void btnIndices_Click(object sender, RoutedEventArgs e)
-        {
-            if (comboIndMod.Text=="" || comboIndPro.Text=="")
-            {
-                mensajes( "Seleccione un codigo para ejecutar esta acción" );
-            }
-            else
-            {
-                consultarParasPiezasIndice( textBuscar.Text, comboIndMod.SelectedItem.ToString(), comboIndPro.SelectedItem.ToString() );
-            }
-        }
-
-        private void textBuscar_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (textBuscar.Text=="")
-            {
-                comboIndMod.IsEnabled=false;
-                comboIndPro.IsEnabled=false;
-                comboIndPro.Items.Clear();
-                comboIndMod.Items.Clear();
-            }
-
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            comboIndMod.IsEnabled=false;
-            comboIndPro.IsEnabled=false;
-        }
-
-
-
-        private void comboIndPro_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key==Key.Return)
-            {
-                btnIndices_Click( null, null );
+                if (textBuscar.Text =="" && txtDescrpcionCiclo.Text !="")
+                {
+                    //dataGridProceso.Items.Clear();
+                    consultarPartesPiezasDescripcion();
+                    txtDescrpcionCiclo.Text=string.Empty;
+                }
+                else if (textBuscar.Text!=""&&txtDescrpcionCiclo.Text=="")
+                {
+                    //dataGridProceso.Items.Clear();
+                    consultarPartesPiezas();
+                    textBuscar.Text=string.Empty;
+                }
+                else if(textBuscar.Text!=""&&txtDescrpcionCiclo.Text!="")
+                {
+                    mensajes( "Ingrese un unico valor" );
+                }
             }
         }
 
@@ -169,6 +158,19 @@ namespace app_PHS
               mensajes("ingrese un código para ejecutar esta acción");
             }
             
+        }
+
+        private void dataGridProceso_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+          consultarParasPiezasIndice( (dataGridProceso.CurrentItem as DataRowView).Row.ItemArray[0].ToString(), (dataGridProceso.CurrentItem as DataRowView).Row.ItemArray[3].ToString(), (dataGridProceso.CurrentItem as DataRowView).Row.ItemArray[4].ToString() );
+        }
+
+        private void txtDescrpcionCiclo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return)
+            {
+                btnBuscar_Click( null, null );
+            }
         }
     }
 }

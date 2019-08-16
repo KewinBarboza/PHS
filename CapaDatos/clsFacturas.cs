@@ -45,7 +45,7 @@ namespace CapaDatos
             return tabla;
         }
 
-        public DataTable consultarFacturaCodigoCliente(int codCliente)
+        public DataTable consultarFacturaCodigoCliente(string codCliente)
         {
             comando.Connection=conexion.AbrirConexion();
             comando.CommandText="consultarFacturaCodigoCliente";

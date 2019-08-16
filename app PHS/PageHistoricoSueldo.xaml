@@ -1,0 +1,65 @@
+﻿<Page x:Class="app_PHS.PageHistoricoSueldo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="636" d:DesignWidth="1257"
+      Background="White"
+      Title="PageHistoricoSueldo">
+
+    <Grid>
+        <Grid Width="400" HorizontalAlignment="Left" Background="#f1f1f1">
+            <TextBlock HorizontalAlignment="Center" Foreground="Gray" Margin="57,10,180,0" TextWrapping="Wrap" Text="Historico Sueldo" VerticalAlignment="Top" FontSize="20" Width="163"/>
+            <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
+                <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
+                <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <materialDesign:PackIcon Kind="AccountSupervisor" Height="25" Width="25" Margin="27,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtBuscar" materialDesign:HintAssist.Hint="Nombre ó Cedula"   Margin="60,78,42,504" FontSize="20" KeyDown="txtBuscar_KeyDown" />
+
+            <materialDesign:PackIcon Kind="Numeric" Height="25" Width="25" Margin="27,175,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="txtCodigo"  materialDesign:HintAssist.Hint="Codigo del trabajador" Margin="60,150,42,436" FontSize="20" KeyDown="txtCodigo_KeyDown"/>
+
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click"  Content="Consultar" HorizontalAlignment="Left" Margin="138,224,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <DataGrid x:Name="GridSueldo" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="342" Width="400" Background="#f3f3f3"  IsReadOnly="True" PreviewMouseDoubleClick="GridSueldo_PreviewMouseDoubleClick" />
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+        </Grid>
+        <Grid Width="857" HorizontalAlignment="Right">
+            <materialDesign:PackIcon Kind="People" Height="25" Width="25" Margin="30,40,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Nombre" Margin="60,40,738,571" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Height="25"/>
+            <TextBlock Text="nombre" x:Name="txtNombre" Margin="124,40,406,571" FontSize="15" VerticalAlignment="Center" Height="25"/>
+
+            <materialDesign:PackIcon Kind="BriefcaseCheck" Height="25" Width="25" Margin="309,94,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Cargo" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="339,95,467,517" Height="24"></TextBlock>
+            <TextBlock Text="xxxxxxxx" x:Name="txtCargo" FontSize="15" VerticalAlignment="Center" Margin="395,95,287,517" Height="24"></TextBlock>
+
+            <materialDesign:PackIcon Kind="ElevationRise" Height="25" Width="25" Margin="309,148,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Nivel Educ" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="339,149,440,463" Height="24"></TextBlock>
+            <TextBlock Text="xxxxxxxx" x:Name="txtNivEduc" FontSize="15" VerticalAlignment="Center" Margin="422,149,260,463" Height="24"></TextBlock>
+
+            <materialDesign:PackIcon Kind="Numeric" Height="25" Width="25" Margin="30,94,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Código" FontWeight="Bold" FontSize="15" Margin="60,94,738,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+            <TextBlock Text="xxxxxxxxx" x:Name="txtCodTrabajador"  FontSize="15" Margin="124,94,591,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+
+            <materialDesign:PackIcon Kind="Number3Box" Height="25" Width="25" Margin="30,148,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Cedula" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,149,738,463" Height="24"></TextBlock>
+            <TextBlock Text="00" x:Name="txtCedula" FontSize="15" VerticalAlignment="Center" Margin="124,149,579,463" Height="24"></TextBlock>
+
+            <materialDesign:PackIcon Kind="DateRange" Height="25" Width="25" Margin="30,208,0,0" Foreground="#f9aa33"/>
+            <TextBlock Text="Fecha Ingreso" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,208,697,403" Height="25"></TextBlock>
+            <TextBlock Text="00/00/000" x:Name="txtFecIng" FontSize="15" VerticalAlignment="Center" Margin="163,208,615,404" Height="24"></TextBlock>
+
+            <DataGrid IsReadOnly="True" HorizontalAlignment="Left" x:Name="GridHistoricoSueldo" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+        </Grid>
+    </Grid>
+</Page>

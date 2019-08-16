@@ -16,25 +16,34 @@
         <TextBlock Foreground="Gray" Margin="57,10,997,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ingenieria y proyecto" VerticalAlignment="Top" FontSize="20" Height="32"/>
 
         <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image" HorizontalAlignment="Center" Height="140" Width="450" Margin="404,80,403,416"/>
+        <Grid  Width="800" Height="391" VerticalAlignment="Bottom" Margin="228,0,229,0">
+            <Button x:Name="btnProcesos" Click="btnProcesos_Click" Foreground="#f9aa33"    BorderBrush="{x:Null}" Background="#ffffff" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="140" Height="130" Margin="50,32,0,0">
+                <materialDesign:PackIcon Kind="Cogs" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Procesos" FontSize="14" Foreground="Gray" Margin="50,134,610,235" VerticalAlignment="Center" TextAlignment="Center" Height="22"/>
 
-        <Button x:Name="btnProcesos" Click="btnProcesos_Click" Foreground="#f9aa33" HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}" Background="#ffffff"  Width="140" Height="130" Margin="340,256,777,250">
-            <materialDesign:PackIcon Kind="Cogs" Height="80" Width="80" VerticalAlignment="Top"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" Text="Procesos" FontSize="14" Foreground="Gray" Margin="383,356,810,254" Width="64"/>
+            <Button x:Name="btnMaestroMateriales" Click="btnMaestroMateriales_Click"  Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="243,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="Lock" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Maestro de materiales" FontSize="14" Foreground="Gray" Margin="243,134,417,235" TextAlignment="Center" VerticalAlignment="Center" Height="22"/>
 
-        <Button x:Name="btnMaestroMateriales" Click="btnMaestroMateriales_Click"  Foreground="#f9aa33" HorizontalAlignment="Center"   BorderBrush="{x:Null}" Background="#ffffff"  VerticalAlignment="Center" Width="140" Height="130" Margin="556,256,561,250">
-            <materialDesign:PackIcon Kind="Lock" Height="80" Width="80" VerticalAlignment="Top"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" Text="Maestro de materiales" FontSize="14" Foreground="Gray" Margin="557,354,561,254" Width="139"/>
+            <Button x:Name="btnCicloProduccion" Click="btnCicloProduccion_Click"   Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="429,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="GoogleCirclesGroup" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Ciclo de producción" FontSize="14" Foreground="Gray" Margin="429,134,231,235" TextAlignment="Center" VerticalAlignment="Center" Height="22"/>
 
-        <Button x:Name="btnCicloProduccion" Click="btnCicloProduccion_Click"   Foreground="#f9aa33" HorizontalAlignment="Center"   BorderBrush="{x:Null}" Background="#ffffff"  VerticalAlignment="Center" Width="140" Height="130" Margin="770,256,347,250">
-            <materialDesign:PackIcon Kind="GoogleCirclesGroup" Height="80" Width="80" VerticalAlignment="Top"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" Text="Ciclo de producción" FontSize="14" Foreground="Gray" Margin="784,356,348,254" Width="125"/>
+            <Button x:Name="btnSopDatosTecnicos" Click="btnSopDatosTecnicos_Click"  Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="610,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="Database" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Sop. Datos Tecnicos" FontSize="14" Foreground="Gray"  VerticalAlignment="Center" Height="22" TextAlignment="Center" Margin="610,134,50,235"/>
 
-        <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-            <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
-        </materialDesign:Snackbar>
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+
+        </Grid>
+
+
 
     </Grid>
 </Page>

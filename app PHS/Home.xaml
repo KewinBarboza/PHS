@@ -10,47 +10,47 @@
       Title="PageFacturas">
 
     <Grid Background="White"  Loaded="Grid_Loaded">
-        <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image" HorizontalAlignment="Center" Height="140" Width="450" Margin="404,80,403,416"/>
+        <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image" HorizontalAlignment="Center" Height="140" Width="400" Margin="404,80,403,416"/>
         <Grid Width="800" Height="391" VerticalAlignment="Bottom" Margin="228,0,229,0">
             <Button x:Name="btnVentas" Click="btnVentas_Click" Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff" Margin="50,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Cash100" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Ventas" FontSize="14" Foreground="Gray" Margin="100,130,660,235"/>
+            <TextBlock Text="Ventas" FontSize="14" Foreground="Gray" Margin="50,134,610,239" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnRRHH" Click="BtnRRHH_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="243,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Person" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="RRHH" FontSize="14" Foreground="Gray" Margin="296,130,468,235"/>
+            <TextBlock Text="RRHH" FontSize="14" Foreground="Gray" Margin="244,134,417,239" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="btnFinanza" Click="btnFinanza_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="429,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Poll" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Finanza" FontSize="14" Foreground="Gray" Margin="476,130,278,235"/>
+            <TextBlock Text="Finanza" FontSize="14" Foreground="Gray" Margin="429,134,231,239" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnContabilidad" Click="BtnContabilidad_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="610,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Numbers" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Contabilidad" FontSize="14" Foreground="Gray" Margin="640,130,80,235"/>
+            <TextBlock Text="Contabilidad" FontSize="14" Foreground="Gray" Margin="615,134,55,239" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnInventario" Click="BtnInventario_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="50,196,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Assignment" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Inventario" FontSize="14" Foreground="Gray" Margin="89,296,649,68"/>
+            <TextBlock Text="Inventario" FontSize="14" Foreground="Gray" Margin="50,300,610,72" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnCompras" Click="BtnCompras_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="244,196,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="AttachMoney" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Compras" FontSize="14" Foreground="Gray" Height="30" Margin="286,293,458,68"/>
+            <TextBlock Text="Compras" FontSize="14" Foreground="Gray" Height="30" Margin="244,293,417,68" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnDespacho" Click="BtnDespacho_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="429,196,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="LocalShipping" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Despacho" FontSize="14" Foreground="Gray" Height="30" Margin="468,293,270,68"/>
+            <TextBlock Text="Despacho" FontSize="14" Foreground="Gray" Height="30" Margin="429,293,231,68" VerticalAlignment="Center" TextAlignment="Center"/>
 
             <Button x:Name="BtnIngProyecto" Click="BtnIngProyecto_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff" Margin="610,196,0,0" VerticalAlignment="Top" Width="140" Height="130">
                 <materialDesign:PackIcon Kind="Build" Height="80" Width="80" VerticalAlignment="Top"/>
             </Button>
-            <TextBlock HorizontalAlignment="Center" Text="Ingieneria y Proyecto" FontSize="14" Foreground="Gray" Height="30" Margin="615,293,55,68"/>
+            <TextBlock Text="Ingieneria y Proyecto" FontSize="14" Foreground="Gray" Height="30" Margin="615,293,55,68" VerticalAlignment="Center" TextAlignment="Center"/>
         </Grid>
         <Grid Height="75" VerticalAlignment="Top">
             <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Background="#FFAEAEAE" BorderBrush="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Right"  ToolTip="Configuración" x:Name="BtnConfiguracion" Click="BtnConfiguracion_Click" Margin="0,18,30,17">

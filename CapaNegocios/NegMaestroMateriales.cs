@@ -10,9 +10,9 @@ namespace CapaNegocios
 {
     public class NegMaestroMateriales
     {
-        public static DataTable consultarMaestroMateriales(string codigo, string indModificacion, int opc)
+        public static DataTable consultarMaestroMateriales(string codigo, string indModificacion,string desc, int opc)
         {
-            return new clsMaestroMateriales().consultarMaestroMateriales( codigo, indModificacion, opc );
+            return new clsMaestroMateriales().consultarMaestroMateriales( codigo, indModificacion,desc, opc );
         }
     }
 }

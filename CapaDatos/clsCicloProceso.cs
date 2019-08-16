@@ -12,11 +12,11 @@ namespace CapaDatos
     {
         private Conexion conexion = new Conexion();
 
-        SqlDataReader leer;
+        SqlDataReader leer; 
         SqlCommand comando = new SqlCommand();
         DataTable tabla = new DataTable();
 
-        public DataTable consultarCicloProcesos(string codigo, string IndModificacion, string indProceso,int opc)
+        public DataTable consultarCicloProcesos(string codigo, string IndModificacion, string indProceso,string desc,int opc)
         {
             comando.Connection=conexion.AbrirConexion();
             comando.CommandText="consultarCicloProcesos";
@@ -24,6 +24,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue( "@codigo", codigo );
             comando.Parameters.AddWithValue( "@indProceso", indProceso );
             comando.Parameters.AddWithValue( "@IndModificacion", IndModificacion );
+            comando.Parameters.AddWithValue( "@desc", desc );
             comando.Parameters.AddWithValue( "@opc", opc );
             leer=comando.ExecuteReader();
             tabla.Load( leer );

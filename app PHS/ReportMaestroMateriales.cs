@@ -106,9 +106,17 @@ namespace app_PHS {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_opc {
+        public CrystalDecisions.Shared.IParameterField Parameter_desc {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_opc {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }

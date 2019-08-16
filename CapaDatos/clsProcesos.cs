@@ -28,6 +28,18 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable consultarPartesPiezasDescripcion(string desc)
+        {
+            comando.Connection=conexion.AbrirConexion();
+            comando.CommandText="consultarPartesPiezasDescripcion";
+            comando.CommandType=CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue( "@desc", desc );
+            leer=comando.ExecuteReader();
+            tabla.Load( leer );
+            conexion.CerrarConexion();
+            return tabla;
+        }
+
         public DataTable consultarParasPiezasIndice(string codigo, string IndModificacion, string indProceso)
         {
             comando.Connection=conexion.AbrirConexion();

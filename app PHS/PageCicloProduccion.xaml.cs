@@ -36,7 +36,7 @@ namespace app_PHS
         private void consultarCicloProcesos()
         {
             DataTable dt =new DataTable();
-            dt=NegCicloProceso.consultarCicloProcesos(textBuscar.Text,"","",0);
+            dt=NegCicloProceso.consultarCicloProcesos(textBuscar.Text,"","","",0);
 
             if (dt.Rows.Count == 0)
             {
@@ -44,36 +44,35 @@ namespace app_PHS
             }
             else
             {
+                GridCicloProduccionIndices.ItemsSource=dt.DefaultView;
                 int max = 0; int temp=0;
                 int max2 = 0; int temp2=0;
                 for (int i = 0; i<dt.Rows.Count; i++)
                 {
 
                     codCiclo.Text=dt.Rows[i]["CODIGO"].ToString();
-                    comboIndMod.Items.Add(dt.Rows[i]["IM"].ToString());
-                    comboIndPro.Items.Add(dt.Rows[i]["ind_proceso"].ToString());
+                    //comboIndMod.Items.Add(dt.Rows[i]["IM"].ToString());
+                    //comboIndPro.Items.Add(dt.Rows[i]["ind_proceso"].ToString());
 
                     temp=max;
                     temp2=max2;
-                    if (Convert.ToInt32( dt.Rows[i]["IM"].ToString() )>max && Convert.ToInt32( dt.Rows[i]["ind_proceso"].ToString() )>max2)
+                    if (Convert.ToInt32( dt.Rows[i]["ind_Diseño"].ToString() )>max && Convert.ToInt32( dt.Rows[i]["ind_Proceso"].ToString() )>max2)
                     {
-                        max=Convert.ToInt32( dt.Rows[i]["IM"].ToString() );
-                        max2=Convert.ToInt32( dt.Rows[i]["ind_proceso"].ToString() );
+                        max=Convert.ToInt32( dt.Rows[i]["ind_Diseño"].ToString() );
+                        max2=Convert.ToInt32( dt.Rows[i]["ind_Proceso"].ToString() );
                     }
 
-                    consultarCicloProcesosIndices(codCiclo.Text,"0"+Convert.ToString( max ), "0"+Convert.ToString( max2 ), 1);
+                    consultarCicloProcesosIndices(codCiclo.Text,"0"+Convert.ToString( max ), "0"+Convert.ToString( max2 ),"", 1);
                 }
-                comboIndMod.IsEnabled=true;
-                comboIndPro.IsEnabled=true;
             }
 
 
         }
 
-        private void consultarCicloProcesosIndices(string codigo,string indProceso,string indModificacion,int opc)
+        private void consultarCicloProcesosIndices(string codigo,string indProceso,string indModificacion,string desc,int opc)
         {
             DataTable dt = new DataTable();
-            dt=NegCicloProceso.consultarCicloProcesos( codigo, indProceso, indModificacion, opc );
+            dt=NegCicloProceso.consultarCicloProcesos( codigo, indProceso, indModificacion,desc, opc );
 
             if (dt.Rows.Count ==0 )
             {
@@ -102,17 +101,25 @@ namespace app_PHS
                 }
             }
         }
-        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        private void consultarCicloProduccionDescripcion(string descripcion)
         {
-            NavigationService.Navigate( new PageIngProyecto() );
+            DataTable dt = new DataTable();
+            dt=NegCicloProceso.consultarCicloProcesos( "", "", "", descripcion, 2 );
+            if (dt.Rows.Count==0)
+            {
+                mensajes( "Descripción inválida intente de nuevo" );
+            }
+            else
+            {
+                GridCicloProduccionIndices.ItemsSource=dt.DefaultView;
+            }
         }
-
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
             if (codCiclo.Text!="000000000")
             {
                 WindowRepFactura p  = new WindowRepFactura();
-                p.reporteCicloProceso( codCiclo.Text, txtDiseño.Text, txtProceso.Text,1 );
+                p.reporteCicloProceso( codCiclo.Text, txtDiseño.Text, txtProceso.Text,"",1 );
                 p.Show();
             }
             else
@@ -123,30 +130,27 @@ namespace app_PHS
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            if (textBuscar.Text=="")
+            if (textBuscar.Text=="" && txtDescripcionIndice.Text=="")
             {
                 mensajes( "Ingrese un codigo para ejecutar esta acción" );
             }
-            else
+            else if (textBuscar.Text!=""&&txtDescripcionIndice.Text!="")
             {
-                comboIndPro.Items.Clear();
-                comboIndMod.Items.Clear();
+                mensajes( "Ingrese un valor unico" );
+            }
+            else if(textBuscar.Text!="" && txtDescripcionIndice.Text=="")
+            {
                 consultarCicloProcesos();
+                txtDescripcionIndice.Text=string.Empty;
+                textBuscar.Text=string.Empty;
+            }
+            else if(textBuscar.Text==""&&txtDescripcionIndice.Text!="")
+            {
+                consultarCicloProduccionDescripcion( txtDescripcionIndice.Text );
+                txtDescripcionIndice.Text=string.Empty;
+                textBuscar.Text=string.Empty;
             }
             
-        }
-
-        private void btnIndices_Click(object sender, RoutedEventArgs e)
-        {
-            if (comboIndMod.Text==""||comboIndPro.Text=="")
-            {
-                mensajes( "Seleccione un codigo para ejecutar esta acción" );
-            }
-            else
-            {
-                consultarCicloProcesosIndices( textBuscar.Text, comboIndMod.SelectedItem.ToString(), comboIndPro.SelectedItem.ToString(), 1 );
-
-            }
         }
 
         private void textBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -156,30 +160,22 @@ namespace app_PHS
                 btnBuscar_Click( null, null );
             }
         }
-
-        private void textBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        private void GridCicloProduccionIndices_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (textBuscar.Text=="")
-            {
-                comboIndMod.IsEnabled=false;
-                comboIndPro.IsEnabled=false;
-                comboIndMod.Items.Clear();
-                comboIndPro.Items.Clear();
-            }
+            consultarCicloProcesosIndices( (GridCicloProduccionIndices.CurrentItem as DataRowView ).Row.ItemArray[0].ToString(), (GridCicloProduccionIndices.CurrentItem as DataRowView).Row.ItemArray[1].ToString(), (GridCicloProduccionIndices.CurrentItem as DataRowView).Row.ItemArray[2].ToString(),"",1 );
         }
 
-        private void comboIndPro_KeyDown(object sender, KeyEventArgs e)
+        private void txtDescripcionIndice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key==Key.Return)
             {
-                btnIndices_Click( null, null );
+                btnBuscar_Click( null, null );
             }
         }
 
-        private void comboIndMod_Loaded(object sender, RoutedEventArgs e)
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            comboIndMod.IsEnabled=false;
-            comboIndPro.IsEnabled=false;
+            NavigationService.Navigate( new PageIngProyecto() );
         }
     }
 }

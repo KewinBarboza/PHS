@@ -56,7 +56,7 @@ namespace app_PHS
             }
             else
             {
-                //NavigationService.Navigate( new PageVentas() );
+                NavigationService.Navigate( new PageRecursoHumano() );
             }
         }
 
@@ -92,7 +92,7 @@ namespace app_PHS
             }
             else
             {
-                //NavigationService.Navigate( new PageVentas() );
+                NavigationService.Navigate( new PageInventario() );
             }
         }
 
@@ -104,7 +104,7 @@ namespace app_PHS
             }
             else
             {
-                //NavigationService.Navigate( new PageVentas() );
+                NavigationService.Navigate( new PageCompras() );
             }
         }
 

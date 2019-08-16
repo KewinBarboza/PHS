@@ -98,10 +98,21 @@
   <ItemGroup>
     <Compile Include="clsCicloProceso.cs" />
     <Compile Include="clsClientes.cs" />
+    <Compile Include="clsCuentaProveedores.cs" />
+    <Compile Include="clsHistoricoCompras.cs" />
     <Compile Include="clsFacturas.cs" />
+    <Compile Include="clsFichaTrabajador.cs" />
+    <Compile Include="clsHistoricoSha.cs" />
+    <Compile Include="clsHistoricoSueldo.cs" />
+    <Compile Include="clsInventarioAdministradora.cs" />
+    <Compile Include="clsInventarioInversora.cs" />
+    <Compile Include="clsInventarioTratamaq.cs" />
     <Compile Include="clsMaestroMateriales.cs" />
+    <Compile Include="clsMaestroProveedores.cs" />
     <Compile Include="clsProcesos.cs" />
     <Compile Include="clsLogin.cs" />
+    <Compile Include="clsRecursoHumana.cs" />
+    <Compile Include="clsSopDatosTecnicos.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

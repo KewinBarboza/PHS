@@ -15,35 +15,27 @@
             <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
                 <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
-            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="328,41,0,563" ToolTip="Imprimir Reporte">
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
                 <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
+            <materialDesign:PackIcon Kind="Receipt" Height="25" Width="25" Margin="30,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Factura"   Margin="60,78,42,504" FontSize="20" KeyDown="textBuscar_KeyDown"/>
 
-            <StackPanel>
-                <materialDesign:PackIcon Kind="Receipt" Height="25" Width="25" Margin="5 105" Foreground="#f9aa33"/>
-            </StackPanel>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Factura"   Margin="43,87,159,504" FontSize="15" KeyDown="textBuscar_KeyDown"/>
-            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="30,175,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Center" BorderBrush="#f9aa33" x:Name="txtBuscarCodCliente"  materialDesign:HintAssist.Hint="Codigo o Nombre del Cliente" FontSize="20" Width="298" Margin="60,148,42,436" KeyDown="txtBuscarCodCliente_KeyDown"/>
 
-            <StackPanel>
-                <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="5 175" Foreground="#f9aa33"/>
-            </StackPanel>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="txtBuscarCodCliente"  materialDesign:HintAssist.Hint="Codigo Cliente" Margin="43,152,159,437" FontSize="15" KeyDown="txtBuscarCodCliente_KeyDown"/>
-            <Button x:Name="btnBuscarCodCliente" Click="btnBuscarCodCliente_Click" Width="100" Content="Consultar" Margin="280,167,20,437"></Button>
-
-            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FlowDirection="RightToLeft" BorderBrush="#f9aa33" x:Name="fechaIni" materialDesign:HintAssist.Hint="Fecha inicio"  Margin="11,218,289,374"  Width="100" FontSize="15" Height="44" />
-            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FlowDirection="RightToLeft" BorderBrush="#f9aa33" x:Name="fechaFin" materialDesign:HintAssist.Hint="Fecha fin"  Margin="141,218,159,374"  Width="100" FontSize="15" Height="44"/>
-            <Button x:Name="btnBuscarFecha" Click="btnBuscarFecha_Click" Content="Consultar"  Margin="280,230,20,374"  Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
-
-            <!-- long hand form for setting the message -->
-            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,314" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
-            </materialDesign:Snackbar>
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f9aa33" x:Name="fechaIni" materialDesign:HintAssist.Hint="Fecha inicio"  Margin="37,218,216,374" FontSize="20" Height="44" />
+            <DatePicker Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f9aa33" x:Name="fechaFin" materialDesign:HintAssist.Hint="Fecha fin"  Margin="226,218,45,374" FontSize="20" Height="44" RenderTransformOrigin="1.951,0.246"/>
+            
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="135,293,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
             <DataGrid x:Name="GridFacturas" HorizontalAlignment="Left" Margin="0,352,0,0" VerticalAlignment="Top" Width="400" Height="274" Background="#f3f3f3" MouseDoubleClick="GridFacturas_MouseDoubleClick" IsReadOnly="True" />
 
-
+            <!-- long hand form for setting the message -->
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0 " HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
         </Grid>
         <Grid Margin="400,0,0,0">
             <Image x:Name="image" Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOCKEY.png" Margin="10,10,645,566"/>

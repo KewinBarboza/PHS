@@ -15,34 +15,34 @@
                 <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
-            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="328,41,0,563" ToolTip="Imprimir Reporte">
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
                 <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
-            <materialDesign:PackIcon Kind="AccountSupervisor" Height="25" Width="25" Margin="16,93,0,0" Foreground="#f9aa33"/>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtnomCliente" materialDesign:HintAssist.Hint="Nombre Cliente"   Margin="65,73,137,518" FontSize="15" KeyDown="txtnomCliente_KeyDown" />
-            <Button x:Name="btnNomCliente" Click="btnNomCliente_Click"  Content="Consultar" HorizontalAlignment="Left" Margin="280,86,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+            <materialDesign:PackIcon Kind="AccountSupervisor" Height="25" Width="25" Margin="27,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtnomCliente" materialDesign:HintAssist.Hint="Nombre Cliente"   Margin="60,78,42,504" FontSize="20" KeyDown="txtnomCliente_KeyDown" />
+            <Button x:Name="btnNomCliente" Click="btnNomCliente_Click"  Content="Consultar" HorizontalAlignment="Left" Margin="138,298,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
-            <materialDesign:PackIcon Kind="Receipt" Height="25" Width="25" Margin="16,156,0,0" Foreground="#f9aa33"/>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="txtRifCliente"  materialDesign:HintAssist.Hint="RIF Cliente" Margin="65,136,137,453" FontSize="15" KeyDown="txtRifCliente_KeyDown"/>
-            <Button x:Name="btnRifCliente" Click="btnRifCliente_Click" Width="100" Content="Consultar" Margin="280,147,20,457"></Button>
+            <materialDesign:PackIcon Kind="Receipt" Height="25" Width="25" Margin="27,175,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="#f9aa33" x:Name="txtRifCliente"  materialDesign:HintAssist.Hint="RIF Cliente" Margin="60,150,42,436" FontSize="20" KeyDown="txtRifCliente_KeyDown"/>
 
-            <materialDesign:PackIcon Kind="ElevationRise" Height="25" Width="25" Margin="16,220,0,0" Foreground="#f9aa33"/>
-            <ComboBox materialDesign:HintAssist.Hint="Estatus" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Background="#f1f1f1f1" BorderBrush="#f9aa33" Margin="65,205,137,391" Height="40" x:Name="status">
-                <ComboBoxItem>Activos</ComboBoxItem>
-                <ComboBoxItem>Inactivos</ComboBoxItem>
+
+            <materialDesign:PackIcon Kind="ElevationRise" Height="25" Width="25" Margin="27,250,0,0" Foreground="#f9aa33"/>
+            <ComboBox materialDesign:HintAssist.Hint="Estatus" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Background="#f1f1f1f1" BorderBrush="#f9aa33" Margin="57,220,42,361" FontSize="20" Height="55" x:Name="status" KeyDown="status_KeyDown">
+                <ComboBoxItem Content="Activos"/>
+                <ComboBoxItem Content="Inactivos"/>
             </ComboBox>
-            <Button x:Name="btnStatus" Click="btnStatus_Click" Width="100" Content="Consultar" Margin="280,213,20,391"></Button>
 
-            <!-- long hand form for setting the message -->
-            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,330" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
-            </materialDesign:Snackbar>
-
-            <Button  x:Name="btnImprimirGrid" Click="btnImprimirGrid_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="4,319,0,285" ToolTip="Exporta excel" >
-                <materialDesign:PackIcon Kind="FileExcel" Height="25" Width="25" HorizontalAlignment="Right"/>
+            <Button  x:Name="btnImprimirGrid" Click="btnImprimirGrid_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="10,319,0,285" ToolTip="Exporta excel" >
+                <materialDesign:PackIcon Kind="FileExcel" Height="25" Width="25" HorizontalAlignment="Right" RenderTransformOrigin="1.532,0.161"/>
             </Button>
+
             <DataGrid x:Name="dataGridCliente" HorizontalAlignment="Left" Margin="0,356,0,0" VerticalAlignment="Top" Width="400" Height="280" MouseDoubleClick="dataGridCliente_MouseDoubleClick" IsReadOnly="True" Background="#f1f1f1f1"/>
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+            <!-- long hand form for setting the message -->
         </Grid>
         <Grid Width="857" HorizontalAlignment="Right">
             <Grid Height="300" Margin="10,20,459,316">
@@ -74,45 +74,45 @@
                 <TextBlock Height="30" VerticalAlignment="Top" Background="#f9aa33" FontSize="20" Foreground="White" Padding="50 0 0 0"><Run Text="Contacto"/></TextBlock>
                 <materialDesign:PackIcon Kind="Contacts" Foreground="White" Height="30" Width="35" Margin="10,0,0,0"/>
 
-                <materialDesign:PackIcon Kind="Cellphone" Height="25" Width="25"  Foreground="#f9aa33" Margin="10,40,0,0"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="65" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,40,0,235"  >Telefonos</TextBlock>
-                <TextBlock Opacity=".68" Text="0000" x:Name="celCliente"  RenderTransformOrigin="1.04,0.6" Margin="110,43,0,235" TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Kind="Cellphone" Height="25" Width="24"  Foreground="#f9aa33" Margin="14,40,0,0"></materialDesign:PackIcon>
+                <TextBlock Height="25" Width="62" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,40,0,235"  >Telefonos</TextBlock>
+                <TextBlock Opacity=".68" Text="0000" x:Name="celCliente"  RenderTransformOrigin="1.04,0.6" Margin="110,43,10,235" TextWrapping="Wrap"/>
 
-                <materialDesign:PackIcon Kind="Mail" Height="26" Width="25"  Foreground="#f9aa33" Margin="10,84,0,0"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="40" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,85,0,190"  >Email</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxxx" x:Name="corCliente"  RenderTransformOrigin="1.04,0.6" Margin="90,88,0,172"  TextWrapping="Wrap" />
+                <materialDesign:PackIcon Kind="Mail" Height="26" Width="24"  Foreground="#f9aa33" Margin="14,84,0,0"></materialDesign:PackIcon>
+                <TextBlock Height="25" Width="38" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,85,0,190"  >Email</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxxx" x:Name="corCliente"  RenderTransformOrigin="1.04,0.6" Margin="91,88,10,172"  TextWrapping="Wrap" />
 
-                <materialDesign:PackIcon Kind="Web" Height="26" Width="25" Margin="10,129,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="70" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,131,0,144"  >Sitio Web</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxxx" x:Name="webCliente"  RenderTransformOrigin="1.04,0.6" Margin="110,133,0,143" TextWrapping="Wrap" />
+                <materialDesign:PackIcon Kind="Web" Height="26" Width="24" Margin="14,129,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
+                <TextBlock Height="25" Width="67" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,131,0,144"  >Sitio Web</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxxx" x:Name="webCliente"  RenderTransformOrigin="1.04,0.6" Margin="110,133,10,143" TextWrapping="Wrap" />
 
-                <materialDesign:PackIcon Kind="Account" Height="26" Width="25" Margin="10,173,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="60" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,174,0,102" >Contacto</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxxx" x:Name="conCliente"  RenderTransformOrigin="1.04,0.6" Margin="115,175,0,81" TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Kind="Account" Height="26" Width="24" Margin="14,173,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
+                <TextBlock Height="25" Width="58" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,174,0,101" >Contacto</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxxx" x:Name="conCliente"  RenderTransformOrigin="1.04,0.6" Margin="115,175,10,81" TextWrapping="Wrap"/>
             </Grid>
             <Grid Height="300" Margin="10,326,459,10">
                 <TextBlock Height="30" VerticalAlignment="Top" Background="#f9aa33" FontSize="20" Foreground="White" Padding="50 0 0 0"><Run Text="Dirección"/></TextBlock>
                 <materialDesign:PackIcon Kind="Directions" Foreground="White" Height="30" Width="35" Margin="10,0,0,0"/>
 
-                <materialDesign:PackIcon Kind="People" Height="25" Width="25"  Foreground="#f9aa33" Margin="10,35,0,0"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="60" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,36,0,240"  >Ciudad</TextBlock>
-                <TextBlock Opacity=".68" Text="nombre" x:Name="ciudad" Height="25" Margin="100,39,0,236" />
+                <materialDesign:PackIcon Kind="Map" Height="24" Width="24"  Foreground="#f9aa33" Margin="14,39,0,0"></materialDesign:PackIcon>
+                <TextBlock Width="58" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,40,0,236"  >Ciudad</TextBlock>
+                <TextBlock Opacity=".68" Text="nombre" x:Name="ciudad" Margin="101,43,10,233" />
 
-                <materialDesign:PackIcon Kind="Number6Box" Height="25" Width="25"  Foreground="#f9aa33" Margin="10,80,0,0"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="75" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,80,0,195"  >Cod.Postal</TextBlock>
-                <TextBlock Opacity=".68" Text="0000" x:Name="codPostal" Height="25" Margin="120,83,10,192" />
+                <materialDesign:PackIcon Kind="Number6Box" Height="24" Width="24"  Foreground="#f9aa33" Margin="14,83,0,0"></materialDesign:PackIcon>
+                <TextBlock Width="72" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,83,0,193"  >Cod.Postal</TextBlock>
+                <TextBlock Opacity=".68" Text="0000" x:Name="codPostal" Margin="120,86,10,190" />
 
-                <materialDesign:PackIcon Kind="LocationOn" Height="24" Width="25" Margin="10,221,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
-                <TextBlock Height="25" Width="65" FontSize="15" TextAlignment="Left" Foreground="#FF343434" HorizontalAlignment="Right" Margin="0,221,288,54"  >Dirección</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxx" x:Name="dirCliente" Margin="100,223,0,5"   TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Kind="LocationOn" Height="24" Width="24" Margin="14,219,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
+                <TextBlock Width="63" FontSize="15" TextAlignment="Left" Foreground="#FF343434" HorizontalAlignment="Right" Margin="0,219,287,56"  >Dirección</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxx" x:Name="dirCliente" Margin="101,221,10,9"   TextWrapping="Wrap"/>
 
-                <materialDesign:PackIcon Kind="Map" Height="26" Width="25" Margin="10,172,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
-                <TextBlock Width="65" FontSize="15" TextAlignment="Left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="35,172,0,104"  >Zona/Min</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxx" x:Name="zonaMin" Margin="105,176,0,102"   TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Kind="Map" Height="25" Width="24" Margin="14,172,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
+                <TextBlock Width="63" FontSize="15" TextAlignment="Left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="38,172,0,105"  >Zona/Min</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxx" x:Name="zonaMin" Margin="105,176,10,103"   TextWrapping="Wrap"/>
 
-                <materialDesign:PackIcon Kind="shop" Height="26" Width="25" Margin="10,120,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
-                <TextBlock Width="40" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="40,120,0,154"  >Local</TextBlock>
-                <TextBlock Opacity=".68" Text="xxxx" x:Name="locCliente" Margin="85,124,0,154" TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Kind="shop" Height="26" Width="24" Margin="14,121,0,0" Foreground="#f9aa33"></materialDesign:PackIcon>
+                <TextBlock Width="38" FontSize="15" TextAlignment="left" Foreground="#FF343434" HorizontalAlignment="Left" Margin="43,121,0,153"  >Local</TextBlock>
+                <TextBlock Opacity=".68" Text="xxxx" x:Name="locCliente" Margin="86,125,10,153" TextWrapping="Wrap"/>
             </Grid>
             <Grid Height="300" Margin="444,326,38,10">
                 <TextBlock Height="30" VerticalAlignment="Top" Background="#f9aa33" FontSize="20" Foreground="White" Padding="50 0 0 0"><Run Text="Estatus"/></TextBlock>

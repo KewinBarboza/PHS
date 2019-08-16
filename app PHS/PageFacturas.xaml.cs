@@ -82,9 +82,8 @@ namespace app_PHS
 
         public void consultarFacturaCodigoCliente(string codCliente)
         {
-            int codClientes=Convert.ToInt32(codCliente);
             System.Data.DataTable dt = new System.Data.DataTable();
-            dt=NegFacturas.consultarFacturaCodigoCliente(codClientes);
+            dt=NegFacturas.consultarFacturaCodigoCliente( codCliente );
 
             if (dt.Rows.Count == 0)
             {
@@ -98,52 +97,57 @@ namespace app_PHS
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            if (textBuscar.Text=="")
+            if (txtBuscarCodCliente.Text =="" && textBuscar.Text==""&&fechaIni.Text==""&&fechaFin.Text=="")
             {
-                mensajes( "Ingrese un numero valido" );
+                mensajes( "Ingrese un dato valido" );
+            }
+            else if (textBuscar.Text != "" && txtBuscarCodCliente.Text != "" || textBuscar.Text != "" && fechaIni.Text != ""  ||textBuscar.Text!=""&&fechaFin.Text!=""||txtBuscarCodCliente.Text!=""&&fechaIni.Text!=""||txtBuscarCodCliente.Text!=""&&fechaFin.Text!="")
+            {
+                mensajes( "Ingrese un único valor" );
+                txtBuscarCodCliente.Text=string.Empty;
+                textBuscar.Text=string.Empty;
+                fechaIni.Text=string.Empty;
+                fechaFin.Text=string.Empty;
             }
             else
             {
-                consultarFactura(textBuscar.Text);
-            }
-        }
+                 if(txtBuscarCodCliente.Text =="" && fechaIni.Text =="" && fechaFin.Text =="")
+                 {
+                    if (textBuscar.Text =="")
+                    {
+                        mensajes( "Ingrese un numero valido" );
+                    }
+                    else
+                    {
+                       consultarFactura(textBuscar.Text);
+                        textBuscar.Text = string.Empty;
+                    }
 
-        private void btnBuscarFecha_Click(object sender, RoutedEventArgs e)
-        {
-            if (fechaFin.Text=="" || fechaIni.Text=="")
-            {
-                mensajes( "Ingrese un fecha valida" );
-            }
-            else
-            {
-                consultarFacturaFecha();
-            }
-        }
-
-        private void btnBuscarCodCliente_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtBuscarCodCliente.Text=="")
-            {
-                mensajes( "Ingrese un numero valido" );
-            }
-            else
-            {
-                consultarFacturaCodigoCliente(txtBuscarCodCliente.Text);
-            }
-        }
-
-        private void textBuscar_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key==Key.Return)
-            {
-                btnBuscar_Click( null, null );
-            }
-        }
-        private void txtBuscarCodCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key==Key.Return)
-            {
-                btnBuscarCodCliente_Click( null, null );
+                }
+                else if (textBuscar.Text==""&&fechaIni.Text==""&&fechaFin.Text=="")
+                {
+                    if (txtBuscarCodCliente.Text=="")
+                    {
+                        mensajes( "Ingrese un numero valido" );
+                    }
+                    else
+                    {
+                        consultarFacturaCodigoCliente( txtBuscarCodCliente.Text );
+                        txtBuscarCodCliente.Text=string.Empty;
+                    }
+                }else if(textBuscar.Text=="" && txtBuscarCodCliente.Text=="")
+                {
+                    if (fechaFin.Text==""||fechaIni.Text=="")
+                    {
+                        mensajes( "Ingrese un fecha valida" );
+                    }
+                    else
+                    {
+                        consultarFacturaFecha();
+                        fechaIni.Text=string.Empty;
+                        fechaFin.Text=string.Empty;
+                    }
+                }
             }
         }
 
@@ -159,15 +163,24 @@ namespace app_PHS
         }
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
-           
             WindowRepFactura p  = new WindowRepFactura();
             p.reporte( Convert.ToInt32( numFactura.Text ) );
             p.Show();
         }
 
-        private void Clientes_Click(object sender, RoutedEventArgs e)
+        private void txtBuscarCodCliente_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Key==Key.Return)
+            {
+                btnBuscar_Click( null, null );
+            }
+        }
+        private void textBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return)
+            {
+                btnBuscar_Click( null, null );
+            }
         }
     }
 }

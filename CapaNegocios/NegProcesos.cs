@@ -19,5 +19,10 @@ namespace CapaNegocios
         {
             return new clsProcesos().consultarParasPiezasIndice( codigo ,IndModificacion,indProceso);
         }
+
+        public static DataTable consultarPartesPiezasDescripcion(string desc)
+        {
+            return new clsProcesos().consultarPartesPiezasDescripcion(desc);
+        }
     }
 }

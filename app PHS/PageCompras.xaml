@@ -1,0 +1,43 @@
+﻿<Page x:Class="app_PHS.PageCompras"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageCompras" Background="White" Height="636" Width="1257">
+
+    <Grid>
+        <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
+            <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+        </Button>
+        <TextBlock Foreground="Gray" Margin="57,10,1091,0" TextAlignment="Center" TextWrapping="Wrap" Text="Compras" VerticalAlignment="Top" FontSize="20" Height="32"/>
+
+        <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image" HorizontalAlignment="Center" Height="140" Width="450" Margin="404,80,403,416"/>
+
+        <Grid  Width="800" Height="391" VerticalAlignment="Bottom" Margin="228,0,229,0">
+            <Button x:Name="btnHistoricoCompras" Click="btnHistoricoCompras_Click" Foreground="#f9aa33"    BorderBrush="{x:Null}" Background="#ffffff" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="140" Height="130" Margin="50,32,0,0">
+                <materialDesign:PackIcon Kind="Animation" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Historico Compras" FontSize="14" Foreground="Gray" Margin="50,134,610,235" VerticalAlignment="Center" TextAlignment="Center" Height="22"/>
+
+            <Button x:Name="btnCuentaProveedores" Click="btnCuentaProveedores_Click"  Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="243,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="LibraryBooks" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Cuenta provedores" FontSize="14" Foreground="Gray" Margin="243,134,417,235" TextAlignment="Center" VerticalAlignment="Center" Height="22"/>
+
+            <Button x:Name="btnMaestroProveedores" Click="btnMaestroProveedores_Click"   Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="429,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="BookOpen" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Maestro proveedores" FontSize="14" Foreground="Gray" Margin="429,134,231,235" TextAlignment="Center" VerticalAlignment="Center" Height="22"/>
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+
+        </Grid>
+
+    </Grid>
+</Page>

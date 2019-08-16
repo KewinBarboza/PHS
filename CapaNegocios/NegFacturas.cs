@@ -20,7 +20,7 @@ namespace CapaNegocios
             return new clsFacturas().consultarFacturaFecha( fechaIni, fechaFin );
         }
 
-        public static DataTable consultarFacturaCodigoCliente(int codCliente)
+        public static DataTable consultarFacturaCodigoCliente(string codCliente)
         {
             return new clsFacturas().consultarFacturaCodigoCliente( codCliente );
         }

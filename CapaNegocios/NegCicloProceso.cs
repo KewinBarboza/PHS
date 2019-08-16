@@ -10,9 +10,9 @@ namespace CapaNegocios
 {
     public class NegCicloProceso
     {
-        public static DataTable consultarCicloProcesos(string codigo,string indModificacion, string indProceso, int opc)
+        public static DataTable consultarCicloProcesos(string codigo,string indModificacion, string indProceso,string desc, int opc)
         {
-            return new clsCicloProceso().consultarCicloProcesos(codigo,indModificacion,indProceso,opc);
+            return new clsCicloProceso().consultarCicloProcesos(codigo,indModificacion,indProceso,desc,opc);
         }
     }
 }

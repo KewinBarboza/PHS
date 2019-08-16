@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:app_PHS"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="PageProcesos"  Background="White" Height="636" Width="1257" Loaded="Page_Loaded">
+      Title="PageProcesos"  Background="White" Height="636" Width="1257" >
 
     <Grid>
         <Grid  Width="400" HorizontalAlignment="Left" Background="#f1f1f1f1">
@@ -16,24 +16,23 @@
                 <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
-            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="328,41,0,563" ToolTip="Imprimir Reporte">
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
                 <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
-            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="10,107,0,0" Foreground="#f9aa33"/>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo del Ciclo"   Margin="43,87,159,504" FontSize="15" TextChanged="textBuscar_TextChanged" KeyDown="textBuscar_KeyDown"/>
-            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="27,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo del Ciclo"   Margin="60,78,42,504" FontSize="20" KeyDown="textBuscar_KeyDown"/>
 
-            <materialDesign:PackIcon Kind="Graphql" Height="26" Width="25" Margin="10,170,0,0" Foreground="#f9aa33"/>
-            <ComboBox materialDesign:HintAssist.Hint="Indice de Diseño" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndMod" Margin="43,152,159,437"></ComboBox>
+            <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="27,175,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtDescrpcionCiclo" materialDesign:HintAssist.Hint="Descripción"   Margin="60,152,42,436" FontSize="20" KeyDown="txtDescrpcionCiclo_KeyDown"/>
 
-            <materialDesign:PackIcon Kind="Cogs" Height="25" Width="25" Margin="10,235,0,0" Foreground="#f9aa33"/>
-            <ComboBox materialDesign:HintAssist.Hint="Indice de proceso" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndPro" Margin="43,220,159,376" KeyDown="comboIndPro_KeyDown"></ComboBox>
-            <Button x:Name="btnIndices" Click="btnIndices_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,228,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="138,224,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
-            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,280" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
+            <DataGrid x:Name="dataGridProceso" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Height="342" Width="400" MouseDoubleClick="dataGridProceso_MouseDoubleClick" Background="#f1f1f1f1"/>
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0" HorizontalAlignment="Center"/>
             </materialDesign:Snackbar>
+
         </Grid>
         <Grid Width="857" HorizontalAlignment="Right">
             <Grid>
@@ -62,7 +61,7 @@
                 <TextBlock Text="00000" x:Name="txtTimEstantar" FontSize="15" VerticalAlignment="Center" Margin="490,207,288,405" Height="24"></TextBlock>
 
             </Grid>
-            <DataGrid HorizontalAlignment="Left" x:Name="GridPartesPiezas" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+            <DataGrid IsReadOnly="True" HorizontalAlignment="Left" x:Name="GridPartesPiezas" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
 
         </Grid>
     </Grid>

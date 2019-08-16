@@ -1,0 +1,62 @@
+﻿<Page x:Class="app_PHS.PageSopDatosTecnicos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:app_PHS"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageSopDatosTecnicos" Background="White" Height="636" Width="1257">
+
+    <Grid>
+        <Grid  Width="400" HorizontalAlignment="Left" Background="#f1f1f1f1">
+            <TextBlock Foreground="Gray" Margin="57,10,134,0" TextAlignment="Center" TextWrapping="Wrap" Text="Sop datos tecnicos" VerticalAlignment="Top" FontSize="20" Height="32"/>
+            <Button x:Name="btnVolver" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnVolver_Click" HorizontalAlignment="Left" Width="52" Margin="0,10,0,594">
+                <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
+                <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
+            </Button>
+
+            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="27,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo del Material"   Margin="60,73,42,504" FontSize="20"  KeyDown="textBuscar_KeyDown"/>
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="138,224,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+
+            <DataGrid x:Name="GridDatosTecnicos" HorizontalAlignment="Left" Margin="0,352,0,0" VerticalAlignment="Top" Width="400" Height="274" Background="#f3f3f3" MouseDoubleClick="GridDatosTecnicos_MouseDoubleClick" IsReadOnly="True" />
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textDescripcionDatosTecnicos" materialDesign:HintAssist.Hint="Descripción"   Margin="60,152,42,436" FontSize="20"  KeyDown="textBuscar_KeyDown"/>
+            <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="27,175,0,0" Foreground="#f9aa33"/>
+        </Grid>
+        <Grid Width="857" HorizontalAlignment="Right">
+            <Grid>
+                <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="30,40,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Código del Material" Margin="60,40,651,571" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Height="25"/>
+                <TextBlock Text="000000000" x:Name="codMaterial" Margin="211,40,320,571" FontSize="15" VerticalAlignment="Center" Height="25"/>
+
+                <materialDesign:PackIcon Kind="CardTextOutline" Height="25" Width="25" Margin="30,94,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Descripción" FontWeight="Bold" FontSize="15" Margin="60,94,715,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+                <TextBlock Text="xxxxxxxxx" x:Name="txtDescripcion"  FontSize="15" Margin="147,94,74,517" Height="25" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"></TextBlock>
+
+                <materialDesign:PackIcon Kind="Graphql" Height="25" Width="25" Margin="30,148,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Indice de Diseño" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,149,675,463" Height="24"></TextBlock>
+                <TextBlock Text="00" x:Name="txtDiseño" FontSize="15" VerticalAlignment="Center" Margin="192,148,608,464" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="Cogs" Height="25" Width="25" Margin="306,147,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="indice de Proceso" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="336,148,390,464" Height="24"></TextBlock>
+                <TextBlock Text="00" x:Name="txtProceso" FontSize="15" VerticalAlignment="Center" Margin="472,148,328,464" Height="24"></TextBlock>
+
+                <materialDesign:PackIcon Kind="ChartDonutVariant" Height="25" Width="25" Margin="30,208,0,0" Foreground="#f9aa33"/>
+                <TextBlock Text="Operación" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,208,715,403" Height="25"></TextBlock>
+                <TextBlock Text="000" x:Name="txtOperación" FontSize="15" VerticalAlignment="Center" Margin="147,209,631,403" Height="24"></TextBlock>
+
+            </Grid>
+            <DataGrid HorizontalAlignment="Left" x:Name="GridSopDatosTecnicos" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+
+        </Grid>
+    </Grid>
+</Page>

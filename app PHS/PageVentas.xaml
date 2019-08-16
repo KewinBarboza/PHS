@@ -14,22 +14,24 @@
         <TextBlock x:Name="consultarFacturas" HorizontalAlignment="Center" Foreground="Gray" Margin="58,10,1135,0" TextWrapping="Wrap" Text="Ventas" VerticalAlignment="Top" FontSize="20" Width="64" Height="32"/>
 
         <Image Source="\\192.168.10.16\desarrollo y programacion\PROYECTO PHS\PHS\app PHS\Assets\LOGO.png" x:Name="image" HorizontalAlignment="Center" Height="140" Width="450" Margin="404,80,403,416"/>
+        <Grid Width="800" Height="391" VerticalAlignment="Bottom" Margin="228,0,229,0">
 
-        <Button x:Name="btnFacturas" Click="btnFacturas_Click" Foreground="#f9aa33" HorizontalAlignment="Center" VerticalAlignment="Center"  BorderBrush="{x:Null}" Background="#ffffff"  Width="140" Height="130" Margin="448,258,669,248">
-            <materialDesign:PackIcon Kind="Receipt" Height="80" Width="80" VerticalAlignment="Top"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" Text="Facturas" FontSize="14" Foreground="Gray" Margin="493,356,713,253"/>
+            <Button x:Name="btnFacturas" Click="btnFacturas_Click" Foreground="#f9aa33" HorizontalAlignment="Left"  BorderBrush="{x:Null}" Background="#ffffff"   Margin="243,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="Receipt" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock  Text="Facturas" FontSize="14" Foreground="Gray" Margin="243,130,417,235" Width="140" TextAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button x:Name="btnClientes" Click="btnClientes_Click" Foreground="#f9aa33" HorizontalAlignment="Center"   BorderBrush="{x:Null}" Background="#ffffff"  VerticalAlignment="Center" Width="140" Height="130" Margin="664,258,453,248">
-            <materialDesign:PackIcon Kind="AccountSupervisor" Height="80" Width="80" VerticalAlignment="Top"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" Text="Clientes" FontSize="14" Foreground="Gray" Margin="709,356,499,253"/>
-        
-        
-        <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-            <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
-        </materialDesign:Snackbar>
-        
-        
+            <Button x:Name="btnClientes" Click="btnClientes_Click" Foreground="#f9aa33" HorizontalAlignment="Left"   BorderBrush="{x:Null}" Background="#ffffff"  Margin="429,32,0,0" VerticalAlignment="Top" Width="140" Height="130">
+                <materialDesign:PackIcon Kind="AccountSupervisor" Height="80" Width="80" VerticalAlignment="Top"/>
+            </Button>
+            <TextBlock Text="Clientes" FontSize="14" Foreground="Gray" Margin="429,130,231,235" Width="140" VerticalAlignment="Center" TextAlignment="Center"/>
+
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,50" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0  -500" HorizontalAlignment="Center"/>
+            </materialDesign:Snackbar>
+        </Grid>
+
+
     </Grid>
 </Page>

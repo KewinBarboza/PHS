@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:app_PHS"
       mc:Ignorable="d" 
       d:DesignHeight="636" d:DesignWidth="1257"
@@ -16,21 +16,22 @@
                 <materialDesign:PackIcon Kind="ArrowBack" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
 
-            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="328,41,0,563" ToolTip="Imprimir Reporte">
+            <Button x:Name="btnImprimir" Click="btnImprimir_Click" Foreground="#f9aa33" BorderBrush="{x:Null}" Background="{x:Null}"  HorizontalAlignment="Left" Width="52" Margin="338,10,0,594" ToolTip="Imprimir Reporte">
                 <materialDesign:PackIcon Kind="Printer" Height="20" Width="20" HorizontalAlignment="Right"/>
             </Button>
-            
-            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="5 105" Foreground="#f9aa33"/>
-            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Estructura"   Margin="43,87,159,504" FontSize="15" TextChanged="textBuscar_TextChanged" Loaded="textBuscar_Loaded" KeyDown="textBuscar_KeyDown_1" />
-            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
-            <materialDesign:PackIcon Kind="Cogs" Height="26" Width="25" Margin="10,170,0,0" Foreground="#f9aa33"/>
-            <ComboBox materialDesign:HintAssist.Hint="Indice de proceso" BorderBrush="#f9aa33" Style="{StaticResource MaterialDesignFloatingHintComboBox}" x:Name="comboIndModificacion" Margin="43,152,159,437"></ComboBox>
-            <Button x:Name="btnIndices" Click="btnIndices_Click" Content="Consultar" HorizontalAlignment="Left" Margin="280,164,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
+            <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="27,107,0,0" Foreground="#f9aa33"/>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="textBuscar" materialDesign:HintAssist.Hint="Codigo Estructura"   Margin="60,78,42,504" FontSize="20" KeyDown="textBuscar_KeyDown_1" />
+            <Button x:Name="btnBuscar" Click="btnBuscar_Click" Content="Consultar" HorizontalAlignment="Left" Margin="154,235,0,0" VerticalAlignment="Top" Width="100" Background="#f9aa33" BorderBrush="{x:Null}"/>
 
-            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,320" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
-                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 -300 " HorizontalAlignment="Center"/>
+            <materialDesign:PackIcon Kind="CardTextOutline" Height="26" Width="25" Margin="27,174,0,0" Foreground="#f9aa33"/>
+
+            <DataGrid x:Name="dataGridModificacion" IsReadOnly="True" HorizontalAlignment="Left" Background="#f1f1f1f1" Margin="0,296,0,0" VerticalAlignment="Top" Height="340" Width="400" MouseDoubleClick="dataGridModificacion_MouseDoubleClick"/>
+
+            <materialDesign:Snackbar IsActive="False" x:Name="messege" Margin="0,0,0,10" HorizontalAlignment="Center" MessageQueue="{materialDesign:MessageQueue}">
+                <materialDesign:SnackbarMessage ActionContent="UNDO" Height="40" Width="376" Margin="0 0 " HorizontalAlignment="Center"/>
             </materialDesign:Snackbar>
+            <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"  BorderBrush="#f9aa33" x:Name="txtDescripciones" materialDesign:HintAssist.Hint="Descripción"   Margin="60,137,42,436" FontSize="20"  KeyDown="textBuscar_KeyDown_1" />
         </Grid>
         <Grid Width="857" HorizontalAlignment="Right">
             <materialDesign:PackIcon Kind="Numeric9BoxOutline" Height="25" Width="25" Margin="30,40,0,0" Foreground="#f9aa33"/>
@@ -49,7 +50,7 @@
             <TextBlock Text="Fecha de Emisión" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" Margin="60,208,670,403" Height="25"></TextBlock>
             <TextBlock Text="00/00/000" x:Name="txtFecEmision" FontSize="15" VerticalAlignment="Center" Margin="187,208,591,404" Height="24"></TextBlock>
 
-            <DataGrid HorizontalAlignment="Left" x:Name="GridMaestroMateriales" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1"/>
+            <DataGrid HorizontalAlignment="Left" x:Name="GridMaestroMateriales" Height="342" Margin="0,294,0,0" VerticalAlignment="Top" Width="847"  Background="#f1f1f1f1" IsReadOnly="True"/>
         </Grid>
     </Grid>
 </Page>

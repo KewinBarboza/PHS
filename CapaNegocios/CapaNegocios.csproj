@@ -96,12 +96,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NegCuentaProveedores.cs" />
+    <Compile Include="NegHistoricoCompras.cs" />
+    <Compile Include="NegHistoricoSha.cs" />
+    <Compile Include="NegHistoricoSueldo.cs" />
     <Compile Include="NegCicloProceso.cs" />
     <Compile Include="NegClientes.cs" />
     <Compile Include="NegFacturas.cs" />
+    <Compile Include="NegFichaTrabajador.cs" />
+    <Compile Include="NegInventarioAdministradora.cs" />
+    <Compile Include="NegInventarioInversora.cs" />
+    <Compile Include="NegInventarioTratamaq.cs" />
     <Compile Include="NegMaestroMateriales.cs" />
+    <Compile Include="NegMaestroProveedores.cs" />
     <Compile Include="NegProcesos.cs" />
     <Compile Include="NegLogin.cs" />
+    <Compile Include="NegRecursoHumana.cs" />
+    <Compile Include="NegSopDatosTecnicos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
